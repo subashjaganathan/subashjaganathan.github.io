@@ -52,6 +52,7 @@
   if (reduced) return;
 
   setInterval(function () {
+    if (document.hidden) return; // pause when tab is in background
     ctx.fillStyle = "rgba(6, 10, 18, 0.1)";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     ctx.fillStyle = "#22e58c";
@@ -114,6 +115,18 @@
   toggle.addEventListener("click", function () { links.classList.toggle("open"); });
   links.querySelectorAll("a").forEach(function (a) {
     a.addEventListener("click", function () { links.classList.remove("open"); });
+  });
+})();
+
+/* ---------- Email links (assembled at runtime to defeat scrapers) ---------- */
+(function () {
+  // address stored reversed so it never appears in source as plain text
+  var addr = "moc.liamg@8091jshsabuS".split("").reverse().join("");
+  document.querySelectorAll(".js-email").forEach(function (a) {
+    var subject = a.getAttribute("data-subject");
+    a.href = "mailto:" + addr + (subject ? "?subject=" + encodeURIComponent(subject) : "");
+    var label = a.querySelector(".email-text");
+    if (label) label.textContent = addr;
   });
 })();
 
