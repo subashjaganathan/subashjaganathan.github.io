@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 | Evidence Not Found</title>
+  <meta name="robots" content="noindex" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #060a12; color: #cdd6e4; font-family: "JetBrains Mono", Consolas, monospace;
+      min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 1.5rem;
+    }
+    .term {
+      width: min(640px, 100%); background: #0e1626; border: 1px solid #1c2a42; border-radius: 12px;
+      overflow: hidden; box-shadow: 0 24px 64px rgba(0,0,0,0.5);
+    }
+    .bar { background: #121c30; padding: 0.6rem 1rem; display: flex; gap: 0.45rem; border-bottom: 1px solid #1c2a42; }
+    .dot { width: 11px; height: 11px; border-radius: 50%; }
+    .body { padding: 1.6rem; font-size: 0.9rem; line-height: 2; }
+    .g { color: #22e58c; } .r { color: #ff5c5c; } .d { color: #8593a8; }
+    a { color: #38bdf8; }
+    .blink { animation: blink 0.9s step-end infinite; color: #22e58c; }
+    @keyframes blink { 50% { opacity: 0; } }
+    h1 { font-size: 3rem; color: #ff5c5c; margin: 0.5rem 0; letter-spacing: 2px; }
+  </style>
+</head>
+<body>
+  <div class="term">
+    <div class="bar">
+      <span class="dot" style="background:#ff5f57"></span>
+      <span class="dot" style="background:#febc2e"></span>
+      <span class="dot" style="background:#28c840"></span>
+    </div>
+    <div class="body">
+      <p><span class="g">$</span> ./locate --page requested_url</p>
+      <h1>ERROR 404</h1>
+      <p class="d">[!] <span class="r">Evidence not found.</span> The artifact you are looking for has been moved, deleted, or never existed.</p>
+      <p class="d">[+] Recommended recovery action:</p>
+      <p><span class="g">$</span> cd <a href="/">~/home</a> <span class="blink">▋</span></p>
+    </div>
+  </div>
+</body>
+</html>
