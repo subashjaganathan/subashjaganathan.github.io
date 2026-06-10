@@ -2,7 +2,7 @@
 
 Personal portfolio of **Subash Jaganathan**, Senior Cyber Security Consultant - DFIR · SOC · Threat Hunting · Threat Intelligence · Malware Analysis · AI Security.
 
-🔗 **Live site:** https://dfir-hawk.github.io (once published)
+**Live site:** https://dfir-hawk.github.io (once published)
 
 ## Stack
 
