@@ -8,6 +8,7 @@
     "Threat Hunting | MITRE ATT&CK",
     "Malware Analysis & Reverse Engineering",
     "Threat Intelligence & Dark Web Forensics",
+    "Cybercrime Investigator | Cyber Forensic Expert",
     "AI Security | LLM Threat Modeling"
   ];
   var el = document.getElementById("typewriter");
