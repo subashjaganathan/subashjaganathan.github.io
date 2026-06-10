@@ -1,0 +1,121 @@
+/* Subash Jaganathan — DFIR Portfolio interactions */
+
+/* ---------- Typewriter ---------- */
+(function () {
+  var roles = [
+    "Digital Forensics & Incident Response",
+    "SOC Operations & Detection Engineering",
+    "Threat Hunting | MITRE ATT&CK",
+    "Malware Analysis & Reverse Engineering",
+    "Threat Intelligence & Dark Web Forensics",
+    "AI Security | LLM Threat Modeling"
+  ];
+  var el = document.getElementById("typewriter");
+  if (!el) return;
+  var ri = 0, ci = 0, deleting = false;
+
+  function tick() {
+    var word = roles[ri];
+    if (!deleting) {
+      ci++;
+      el.textContent = word.slice(0, ci);
+      if (ci === word.length) { deleting = true; setTimeout(tick, 2100); return; }
+      setTimeout(tick, 48 + Math.random() * 40);
+    } else {
+      ci--;
+      el.textContent = word.slice(0, ci);
+      if (ci === 0) { deleting = false; ri = (ri + 1) % roles.length; setTimeout(tick, 350); return; }
+      setTimeout(tick, 24);
+    }
+  }
+  tick();
+})();
+
+/* ---------- Matrix rain background ---------- */
+(function () {
+  var canvas = document.getElementById("matrix-bg");
+  if (!canvas) return;
+  var ctx = canvas.getContext("2d");
+  var chars = "01アイウエオカキクケコ$#@&%<>/\\{}[]";
+  var fontSize = 14, drops = [], cols = 0;
+
+  function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    cols = Math.floor(canvas.width / fontSize);
+    drops = new Array(cols).fill(1).map(function () { return Math.floor(Math.random() * canvas.height / fontSize); });
+  }
+  resize();
+  window.addEventListener("resize", resize);
+
+  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduced) return;
+
+  setInterval(function () {
+    ctx.fillStyle = "rgba(6, 10, 18, 0.1)";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = "#22e58c";
+    ctx.font = fontSize + "px monospace";
+    for (var i = 0; i < drops.length; i++) {
+      var ch = chars.charAt(Math.floor(Math.random() * chars.length));
+      ctx.fillText(ch, i * fontSize, drops[i] * fontSize);
+      if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
+      drops[i]++;
+    }
+  }, 70);
+})();
+
+/* ---------- Scroll reveal ---------- */
+(function () {
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        e.target.classList.add("visible");
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll(".reveal").forEach(function (el) { observer.observe(el); });
+})();
+
+/* ---------- Animated counters ---------- */
+(function () {
+  var counters = document.querySelectorAll(".stat-num");
+  var done = new WeakSet();
+  var obs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting || done.has(e.target)) return;
+      done.add(e.target);
+      var target = parseInt(e.target.getAttribute("data-count"), 10);
+      var dur = 1600, start = null;
+      function step(ts) {
+        if (!start) start = ts;
+        var p = Math.min((ts - start) / dur, 1);
+        var eased = 1 - Math.pow(1 - p, 3);
+        e.target.textContent = Math.floor(eased * target).toLocaleString();
+        if (p < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+      obs.unobserve(e.target);
+    });
+  }, { threshold: 0.4 });
+  counters.forEach(function (c) { obs.observe(c); });
+})();
+
+/* ---------- Nav: scrolled state + mobile toggle ---------- */
+(function () {
+  var nav = document.getElementById("nav");
+  window.addEventListener("scroll", function () {
+    nav.classList.toggle("scrolled", window.scrollY > 30);
+  }, { passive: true });
+
+  var toggle = document.getElementById("navToggle");
+  var links = document.getElementById("navLinks");
+  toggle.addEventListener("click", function () { links.classList.toggle("open"); });
+  links.querySelectorAll("a").forEach(function (a) {
+    a.addEventListener("click", function () { links.classList.remove("open"); });
+  });
+})();
+
+/* ---------- Footer year ---------- */
+document.getElementById("year").textContent = new Date().getFullYear();
