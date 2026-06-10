@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Subash Jaganathan — Senior Cyber Security Consultant | DFIR · SOC · Threat Hunting</title>
+  <meta name="description" content="Subash Jaganathan — Senior Cybersecurity Consultant specializing in DFIR, SOC operations, malware analysis, threat hunting and threat intelligence. 6+ years across banking, government and enterprise sectors." />
+  <meta property="og:title" content="Subash Jaganathan — Senior Cyber Security Consultant" />
+  <meta property="og:description" content="DFIR · SOC · Threat Hunting · Threat Intelligence · Malware Analysis" />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Sora:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80'>🛡️</text></svg>" />
+</head>
+<body>
+  <canvas id="matrix-bg" aria-hidden="true"></canvas>
+  <div class="scan-line" aria-hidden="true"></div>
+
+  <!-- ============ NAV ============ -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#home" class="nav-logo"><span class="logo-bracket">[</span>SJ<span class="logo-cursor">_</span><span class="logo-bracket">]</span></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">// home</a></li>
+        <li><a href="#about">// about</a></li>
+        <li><a href="#skills">// arsenal</a></li>
+        <li><a href="#experience">// experience</a></li>
+        <li><a href="#impact">// impact</a></li>
+        <li><a href="#certs">// certs</a></li>
+        <li><a href="#contact" class="nav-cta">contact --now</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ============ HERO ============ -->
+  <header class="hero" id="home">
+    <div class="hero-content">
+      <p class="hero-pre reveal">root@dfir:~$ whoami</p>
+      <h1 class="hero-name reveal">SUBASH<br /><span class="accent">JAGANATHAN</span></h1>
+      <div class="hero-type reveal">
+        <span class="prompt">&gt;</span> <span id="typewriter"></span><span class="type-cursor">▋</span>
+      </div>
+      <p class="hero-sub reveal">Senior Cyber Security Consultant — hunting threats, dissecting malware and
+        reconstructing attacks across <strong>banking, government &amp; enterprise</strong> environments for <strong>6+ years</strong>.</p>
+      <div class="hero-actions reveal">
+        <a href="#experience" class="btn btn-primary">View Track Record</a>
+        <a href="https://github.com/DFIR-Hawk" target="_blank" rel="noopener" class="btn btn-ghost">github/DFIR-Hawk ↗</a>
+      </div>
+      <div class="hero-badges reveal">
+        <span class="badge">DFIR</span><span class="badge">SOC</span><span class="badge">Threat Hunting</span>
+        <span class="badge">Malware RE</span><span class="badge">Threat Intel</span><span class="badge">AI Security</span>
+      </div>
+    </div>
+    <div class="hero-terminal reveal">
+      <div class="term-bar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="term-title">incident_response.sh — bash</span></div>
+      <div class="term-body" id="termBody">
+        <p><span class="t-green">$</span> ./triage --target compromised-host</p>
+        <p class="t-dim">[+] Acquiring memory image............ <span class="t-green">DONE</span></p>
+        <p class="t-dim">[+] Parsing $MFT &amp; event logs......... <span class="t-green">DONE</span></p>
+        <p class="t-dim">[+] Hunting persistence mechanisms.... <span class="t-green">DONE</span></p>
+        <p class="t-dim">[+] Mapping TTPs → MITRE ATT&amp;CK....... <span class="t-green">DONE</span></p>
+        <p class="t-dim">[!] Threat actor identified: <span class="t-red">APT-XX</span></p>
+        <p class="t-dim">[✓] Containment executed. Dwell time: <span class="t-amber">minimized</span></p>
+        <p><span class="t-green">$</span> <span class="blink">▋</span></p>
+      </div>
+    </div>
+    <a href="#about" class="scroll-hint" aria-label="Scroll down"><span></span></a>
+  </header>
+
+  <main>
+    <!-- ============ ABOUT ============ -->
+    <section class="section" id="about">
+      <h2 class="section-title reveal"><span class="sec-num">01.</span> cat about.md</h2>
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p>Results-driven cybersecurity professional with <strong>6+ years</strong> of hands-on experience specializing in
+            <strong>Digital Forensics &amp; Incident Response (DFIR)</strong>, <strong>Security Operations (SOC)</strong>,
+            <strong>Malware Analysis</strong>, <strong>Threat Hunting</strong> and <strong>Threat Intelligence</strong> —
+            with growing expertise in <strong>AI Security</strong>, LLM threat detection, and AI-assisted VAPT within SOC and IR workflows.</p>
+          <p>Proven record conducting in-depth forensic investigations across <strong>Windows, Linux, mobile and cloud</strong> environments,
+            leading SOC operations, and responding to sophisticated threats including <strong>APTs, ransomware and insider attacks</strong>
+            across banking, financial services, IT and government sectors.</p>
+          <p>Recognized for driving measurable improvements in incident response maturity, forensic investigation depth, and
+            regulatory compliance (<strong>SEBI · RBI · PCI DSS</strong>).</p>
+          <div class="about-highlight">
+            <span class="hl-icon">⚖️</span>
+            <p>Serving as <strong>Cyber Forensic Expert (Volunteer)</strong> under the <strong>Ministry of Home Affairs</strong>, supporting the
+              Tamil Nadu Police, Narcotics Control Bureau &amp; CBCID in cybercrime investigations.</p>
+          </div>
+        </div>
+        <aside class="about-card reveal">
+          <h3>profile.json</h3>
+          <pre class="json-block">{
+  <span class="j-key">"name"</span>: <span class="j-val">"Subash Jaganathan"</span>,
+  <span class="j-key">"role"</span>: <span class="j-val">"Sr. Cyber Security Consultant"</span>,
+  <span class="j-key">"company"</span>: <span class="j-val">"4i Apps Solutions"</span>,
+  <span class="j-key">"location"</span>: <span class="j-val">"Coimbatore, IN"</span>,
+  <span class="j-key">"experience"</span>: <span class="j-num">6</span>+,
+  <span class="j-key">"education"</span>: <span class="j-val">"MCA Cyber Security (9.3 CGPA)"</span>,
+  <span class="j-key">"clearance"</span>: <span class="j-val">"Govt &amp; BFSI engagements"</span>,
+  <span class="j-key">"status"</span>: <span class="j-green">"ACTIVELY_HUNTING"</span>
+}</pre>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section class="section" id="skills">
+      <h2 class="section-title reveal"><span class="sec-num">02.</span> ls /arsenal</h2>
+      <div class="skills-grid">
+        <div class="skill-card reveal">
+          <div class="skill-head"><span class="skill-icon">🔍</span><h3>Security Domains</h3></div>
+          <div class="tags">
+            <span>DFIR</span><span>SOC Operations</span><span>Memory Forensics</span><span>Mobile Forensics</span>
+            <span>Cloud Forensics</span><span>Malware RE</span><span>Threat Hunting</span><span>Threat Intel</span>
+            <span>OSINT</span><span>Dark Web Forensics</span><span>Purple Teaming</span><span>AI Security</span>
+            <span>Pen Testing</span><span>Data Recovery</span><span>GRC</span>
+          </div>
+        </div>
+        <div class="skill-card reveal">
+          <div class="skill-head"><span class="skill-icon">📡</span><h3>SIEM &amp; EDR / XDR</h3></div>
+          <div class="tags">
+            <span>Splunk</span><span>IBM QRadar</span><span>MS Sentinel</span><span>ELK Stack</span><span>Wazuh</span>
+            <span>CrowdStrike Falcon</span><span>Defender XDR</span><span>Cortex XDR</span><span>SentinelOne</span>
+            <span>Trend Micro Vision One</span><span>Heimdal</span>
+          </div>
+        </div>
+        <div class="skill-card reveal">
+          <div class="skill-head"><span class="skill-icon">🧰</span><h3>DFIR Toolkit</h3></div>
+          <div class="tags">
+            <span>Cellebrite</span><span>Magnet Axiom</span><span>FTK Imager</span><span>Volatility</span><span>Redline</span>
+            <span>Belkasoft</span><span>Oxygen Forensics</span><span>Autopsy</span><span>Velociraptor</span><span>KAPE</span>
+            <span>EZ Tools</span><span>SANS SIFT</span><span>Chainsaw</span><span>Timesketch</span><span>CyberChef</span>
+          </div>
+        </div>
+        <div class="skill-card reveal">
+          <div class="skill-head"><span class="skill-icon">🦠</span><h3>Malware Analysis &amp; RE</h3></div>
+          <div class="tags">
+            <span>Ghidra</span><span>IDA Pro</span><span>PEBear</span><span>REMnux</span><span>FLARE VM</span>
+            <span>Any.run</span><span>Joe Sandbox</span><span>YARA</span><span>capa</span><span>Detect-It-Easy</span>
+          </div>
+        </div>
+        <div class="skill-card reveal">
+          <div class="skill-head"><span class="skill-icon">🌐</span><h3>Network &amp; Threat Intel</h3></div>
+          <div class="tags">
+            <span>Wireshark</span><span>Zeek</span><span>Suricata</span><span>NetworkMiner</span><span>tcpdump</span>
+            <span>MISP</span><span>OpenCTI</span><span>AlienVault OTX</span><span>GreyNoise</span><span>Shodan</span><span>CloudSEK</span>
+          </div>
+        </div>
+        <div class="skill-card reveal">
+          <div class="skill-head"><span class="skill-icon">☁️</span><h3>VAPT, Cloud &amp; AI</h3></div>
+          <div class="tags">
+            <span>Nessus</span><span>Burp Suite</span><span>OWASP ZAP</span><span>Qualys</span><span>Nmap</span><span>SQLMap</span>
+            <span>AWS</span><span>Azure</span><span>Oracle Cloud</span><span>LLM Security</span><span>MCP</span><span>Agentic AI Security</span>
+            <span>Claude API</span><span>Python</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIENCE ============ -->
+    <section class="section" id="experience">
+      <h2 class="section-title reveal"><span class="sec-num">03.</span> git log --career</h2>
+      <div class="timeline">
+
+        <article class="tl-item reveal">
+          <div class="tl-marker current"></div>
+          <div class="tl-card">
+            <div class="tl-head">
+              <h3>Senior Cyber Security Consultant</h3>
+              <span class="tl-date">Sep 2025 — Present</span>
+            </div>
+            <p class="tl-company">4i Apps Solutions Pvt. Ltd.</p>
+            <ul>
+              <li>Lead EDR monitoring &amp; threat response with <strong>CrowdStrike Falcon</strong> — behavioural analysis, triage, containment and remediation to minimize attacker dwell time.</li>
+              <li>Lead end-to-end <strong>Incident Response engagements</strong> across endpoint, identity, network, cloud &amp; application layers — from evidence collection to post-incident reporting.</li>
+              <li>Cloud IR &amp; SOC across <strong>AWS and Oracle Cloud</strong> — investigating cloud-native threats, misconfigurations and IAM abuse.</li>
+              <li>Hypothesis-driven &amp; IOC-based <strong>threat hunting</strong> mapped to MITRE ATT&amp;CK; vulnerability management across <strong>200+ servers</strong>.</li>
+              <li><strong>AI Security assessments</strong> — LLM threat modeling, prompt-injection testing and agentic AI workflow evaluation; Claude API integrations to accelerate SOC triage.</li>
+              <li>Reduced <strong>MTTD/MTTR</strong> through continuous detection tuning and IR playbook improvements.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="tl-item reveal">
+          <div class="tl-marker"></div>
+          <div class="tl-card">
+            <div class="tl-head">
+              <h3>Cyber Security Consultant</h3>
+              <span class="tl-date">Aug 2023 — Sep 2025</span>
+            </div>
+            <p class="tl-company">Ernst &amp; Young LLP (Big 4)</p>
+            <ul>
+              <li>Incident response &amp; remediation for enterprise clients across India and international geographies — <strong>ransomware &amp; APT campaigns</strong>.</li>
+              <li>Analysed &amp; attributed multiple <strong>APT campaigns targeting Indian government clients</strong>, delivering classified technical reports mapped to MITRE ATT&amp;CK.</li>
+              <li>Windows, Linux, mobile &amp; <strong>cloud forensics</strong> (Azure AD sign-ins, CloudTrail, storage access patterns) for unauthorized access and exfiltration investigations.</li>
+              <li>Malware analysis &amp; reverse engineering, dark web forensics, brand monitoring and proactive threat intelligence for banking &amp; government sectors.</li>
+              <li>Designed detection rules and custom correlation logic across multiple SIEM platforms; led ransomware recovery operations.</li>
+              <li>Presented investigation reports &amp; remediation roadmaps to client <strong>CISOs, IT leadership and legal teams</strong>.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="tl-item reveal">
+          <div class="tl-marker"></div>
+          <div class="tl-card">
+            <div class="tl-head">
+              <h3>Information Security Analyst — AM Grade I</h3>
+              <span class="tl-date">Feb 2023 — Aug 2023</span>
+            </div>
+            <p class="tl-company">Equitas Small Finance Bank</p>
+            <ul>
+              <li>SOC operations with <strong>IBM QRadar &amp; CrowdStrike</strong> for an RBI-regulated bank — triage, escalation and threat response.</li>
+              <li>Vulnerability assessments on <strong>3,000+ servers</strong> and <strong>90+ application security assessments</strong> (Web &amp; Android) aligned to RBI / PCI DSS.</li>
+              <li>Ransomware analysis with successful <strong>decryption of sensitive files</strong> during active incidents; Purple Team adversary simulations.</li>
+              <li>Participated in <strong>2 RBI-IDRBT Cyber Drills</strong>, validating IR readiness and regulatory compliance.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="tl-item reveal">
+          <div class="tl-marker"></div>
+          <div class="tl-card">
+            <div class="tl-head">
+              <h3>Security Analyst</h3>
+              <span class="tl-date">Jul 2021 — Jan 2023</span>
+            </div>
+            <p class="tl-company">Information Security Governance Pvt. Ltd. (CAMS — Vendor)</p>
+            <ul>
+              <li>Vulnerability assessments on <strong>1,200+ servers</strong> and <strong>60+ app-sec assessments</strong> for one of India's largest financial infrastructure organizations.</li>
+              <li>OSINT, threat hunting &amp; cyber forensics for India's largest mutual fund company and a major bank — leaked database discovery, exposed asset identification.</li>
+              <li>Dark web forensics, web/server attack &amp; email crime investigations with threat actor attribution; ransomware decryption and data recovery across HDD/SSD/RAID/cloud.</li>
+              <li>WAF hardening to full block mode for all external-facing applications; enterprise security awareness training.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="tl-item reveal">
+          <div class="tl-marker"></div>
+          <div class="tl-card">
+            <div class="tl-head">
+              <h3>Security Analyst</h3>
+              <span class="tl-date">May 2020 — Jun 2021</span>
+            </div>
+            <p class="tl-company">Techbylanz Business Solutions</p>
+            <ul>
+              <li>Application security &amp; vulnerability assessments for banking sector clients using <strong>Nessus &amp; Qualys</strong>.</li>
+              <li>Penetration testing of external-facing banking applications; VAPT reporting aligned with RBI &amp; PCI DSS audit requirements.</li>
+              <li>Root-cause analysis of security incidents and secure-coding awareness for development teams.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ IMPACT ============ -->
+    <section class="section" id="impact">
+      <h2 class="section-title reveal"><span class="sec-num">04.</span> grep -r "impact"</h2>
+      <div class="stats-grid">
+        <div class="stat reveal"><span class="stat-num" data-count="6">0</span><span class="stat-plus">+</span><p>Years in the Trenches</p></div>
+        <div class="stat reveal"><span class="stat-num" data-count="3000">0</span><span class="stat-plus">+</span><p>Servers Assessed &amp; Secured</p></div>
+        <div class="stat reveal"><span class="stat-num" data-count="150">0</span><span class="stat-plus">+</span><p>Web &amp; Mobile Apps Tested</p></div>
+        <div class="stat reveal"><span class="stat-num" data-count="200">0</span><span class="stat-plus">+</span><p>Fraud Cases Dismantled</p></div>
+        <div class="stat reveal"><span class="stat-num" data-count="1000">0</span><span class="stat-plus">+</span><p>Morphed Images Taken Down</p></div>
+        <div class="stat reveal"><span class="stat-num" data-count="12">0</span><span class="stat-plus">+</span><p>Industry Certifications</p></div>
+      </div>
+
+      <div class="impact-cards">
+        <div class="impact-card reveal">
+          <span class="ic-icon">🚔</span>
+          <h3>Law Enforcement Ally</h3>
+          <p>Volunteer Cyber Forensic Expert under the <strong>Ministry of Home Affairs</strong> — supporting Tamil Nadu Police, Narcotics Control Bureau &amp; Special Branch CBCID in cybercrime investigations, digital evidence collection and threat actor tracking.</p>
+        </div>
+        <div class="impact-card reveal">
+          <span class="ic-icon">🛡️</span>
+          <h3>Victim Protection at Scale</h3>
+          <p>Helped identify and remove <strong>1,000+ digitally manipulated images</strong> used in cybercrime, and dismantled <strong>200+ fraudulent loan app cases</strong> — recovering evidence and preventing further financial harm.</p>
+        </div>
+        <div class="impact-card reveal">
+          <span class="ic-icon">⚙️</span>
+          <h3>Open-Source DFIR Builder</h3>
+          <p>Author of the <strong>Windows IR Evidence Collection Toolkit</strong> and <strong>Linux DFIR Toolkit</strong> on GitHub — actively used by the security community for enterprise incident response. <a href="https://github.com/DFIR-Hawk" target="_blank" rel="noopener">github.com/DFIR-Hawk ↗</a></p>
+        </div>
+        <div class="impact-card reveal">
+          <span class="ic-icon">🕸️</span>
+          <h3>Scammer Network Takedowns</h3>
+          <p>Tracked and supported takedown operations against online scammer networks using <strong>OSINT, dark web intelligence and digital forensics</strong> — assisting law enforcement in account seizure and attacker attribution.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CERTIFICATIONS ============ -->
+    <section class="section" id="certs">
+      <h2 class="section-title reveal"><span class="sec-num">05.</span> ./verify --credentials</h2>
+      <div class="certs-grid">
+        <div class="cert-group reveal">
+          <h3>🔬 Forensics &amp; IR</h3>
+          <ul>
+            <li><strong>CHFI</strong> — Computer Hacking Forensic Investigator <span>EC-Council</span></li>
+            <li><strong>iOS Forensics</strong> <span>Belkasoft</span></li>
+            <li><strong>Android Forensics</strong> <span>Belkasoft</span></li>
+            <li><strong>Windows Forensics</strong> <span>Belkasoft</span></li>
+          </ul>
+        </div>
+        <div class="cert-group reveal">
+          <h3>⚔️ Offensive Security</h3>
+          <ul>
+            <li><strong>CEH</strong> — Certified Ethical Hacker <span>EC-Council</span></li>
+            <li><strong>CNSS</strong> — Certified Network Security Specialist <span>ICSI</span></li>
+          </ul>
+        </div>
+        <div class="cert-group reveal">
+          <h3>☁️ Cloud &amp; Network</h3>
+          <ul>
+            <li><strong>AZ-500</strong> — Azure Security Engineer Associate <span>Microsoft</span></li>
+            <li><strong>CCZT</strong> — Certified Cloud Zero Trust <span>Cloud Security Alliance</span></li>
+            <li><strong>NSE 1 &amp; NSE 2</strong> — Network Security Expert <span>Fortinet</span></li>
+          </ul>
+        </div>
+        <div class="cert-group reveal">
+          <h3>🤖 AI Security</h3>
+          <ul>
+            <li><strong>Certified LLM Security Professional</strong> <span>Red Team Leaders</span></li>
+            <li><strong>Claude Code in Action</strong> <span>Anthropic</span></li>
+            <li><strong>Building with the Claude API</strong> <span>Anthropic</span></li>
+            <li><strong>Intro to Model Context Protocol</strong> <span>Anthropic</span></li>
+            <li><strong>Intro to Agent Skills</strong> <span>Anthropic</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="edu-row">
+        <div class="edu-card reveal">
+          <span class="edu-icon">🎓</span>
+          <div>
+            <h3>Master of Computer Applications — Cyber Security</h3>
+            <p>Amrita Vishwa Vidyapeetham (NAAC A++), Coimbatore</p>
+          </div>
+          <span class="edu-gpa">9.3<small>/10</small></span>
+        </div>
+        <div class="edu-card reveal">
+          <span class="edu-icon">🎓</span>
+          <div>
+            <h3>B.Sc — Software Systems</h3>
+            <p>Sri Krishna Arts and Science College, Coimbatore</p>
+          </div>
+          <span class="edu-gpa">8.5<small>/10</small></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section contact" id="contact">
+      <h2 class="section-title reveal"><span class="sec-num">06.</span> ssh subash@contact</h2>
+      <div class="contact-box reveal">
+        <p class="contact-lead">Open to senior <span class="accent">DFIR</span> and <span class="accent">SOC leadership</span> opportunities.
+          Whether it's an active incident, a threat hunt, or building IR capability from scratch — let's talk.</p>
+        <div class="contact-links">
+          <a href="mailto:Subashsj1908@gmail.com" class="contact-link"><span class="cl-icon">✉️</span><span><small>Email</small>Subashsj1908@gmail.com</span></a>
+          <a href="tel:+919789755730" class="contact-link"><span class="cl-icon">📞</span><span><small>Phone</small>+91 97897 55730</span></a>
+          <a href="https://linkedin.com/in/subash-j" target="_blank" rel="noopener" class="contact-link"><span class="cl-icon">💼</span><span><small>LinkedIn</small>linkedin.com/in/subash-j</span></a>
+          <a href="https://github.com/DFIR-Hawk" target="_blank" rel="noopener" class="contact-link"><span class="cl-icon">🦅</span><span><small>GitHub</small>github.com/DFIR-Hawk</span></a>
+        </div>
+        <p class="contact-loc">📍 Coimbatore, Tamil Nadu, India</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p><span class="t-green">$</span> echo "Designed &amp; built by Subash Jaganathan — © <span id="year"></span>"</p>
+    <p class="footer-sub">No threats were left unhunted in the making of this site.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
