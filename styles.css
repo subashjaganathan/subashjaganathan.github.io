@@ -38,6 +38,20 @@ body {
 a { color: var(--accent2); text-decoration: none; }
 a:hover { text-decoration: underline; }
 
+/* skip link (visible on keyboard focus) */
+.skip-link {
+  position: absolute; left: 50%; top: -60px; transform: translateX(-50%);
+  z-index: 200; background: var(--accent); color: #04130b; font-family: var(--mono);
+  font-size: 0.85rem; font-weight: 700; padding: 0.6rem 1.2rem; border-radius: 0 0 8px 8px;
+  transition: top 0.2s;
+}
+.skip-link:focus { top: 0; text-decoration: none; outline: 2px solid #04130b; outline-offset: -5px; }
+
+.contact-noscript {
+  display: inline-block; margin-top: 1rem; font-family: var(--mono);
+  font-size: 0.85rem; color: var(--accent);
+}
+
 /* inline icons */
 .ico {
   fill: none; stroke: var(--accent); stroke-width: 2;

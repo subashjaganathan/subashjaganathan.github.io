@@ -127,7 +127,7 @@
     var subject = a.getAttribute("data-subject");
     a.href = "mailto:" + addr + (subject ? "?subject=" + encodeURIComponent(subject) : "");
     var label = a.querySelector(".email-text");
-    if (label) label.textContent = addr;
+    if (label) label.textContent = addr; // replace human-readable [at]/[dot] form with clickable address
   });
 })();
 
