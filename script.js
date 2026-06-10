@@ -1,4 +1,4 @@
-/* Subash Jaganathan — DFIR Portfolio interactions */
+/* Subash Jaganathan - DFIR Portfolio interactions */
 
 /* ---------- Typewriter ---------- */
 (function () {
