@@ -125,7 +125,11 @@
   var addr = "moc.liamg@8091jshsabuS".split("").reverse().join("");
   document.querySelectorAll(".js-email").forEach(function (a) {
     var subject = a.getAttribute("data-subject");
-    a.href = "mailto:" + addr + (subject ? "?subject=" + encodeURIComponent(subject) : "");
+    var body = a.getAttribute("data-body");
+    var params = [];
+    if (subject) params.push("subject=" + encodeURIComponent(subject));
+    if (body) params.push("body=" + encodeURIComponent(body));
+    a.href = "mailto:" + addr + (params.length ? "?" + params.join("&") : "");
     var label = a.querySelector(".email-text");
     if (label) label.textContent = addr; // replace human-readable [at]/[dot] form with clickable address
   });
