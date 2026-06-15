@@ -330,9 +330,10 @@ a:hover { text-decoration: underline; }
 
 /* ============ impact ============ */
 .stats-grid {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  display: grid; grid-template-columns: repeat(4, 1fr);
   gap: 1.2rem; margin-bottom: 3rem;
 }
+@media (max-width: 900px) { .stats-grid { grid-template-columns: repeat(2, 1fr); } }
 .stat {
   background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px;
   padding: 1.6rem 1rem; text-align: center; transition: border-color 0.25s, transform 0.25s;
