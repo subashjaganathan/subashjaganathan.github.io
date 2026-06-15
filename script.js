@@ -128,7 +128,7 @@
     var body = a.getAttribute("data-body");
     var params = [];
     if (subject) params.push("subject=" + encodeURIComponent(subject));
-    if (body) params.push("body=" + encodeURIComponent(body));
+    if (body) params.push("body=" + encodeURIComponent(body.replace(/\\n/g, "\n")));
     a.href = "mailto:" + addr + (params.length ? "?" + params.join("&") : "");
     var label = a.querySelector(".email-text");
     if (label) label.textContent = addr; // replace human-readable [at]/[dot] form with clickable address
