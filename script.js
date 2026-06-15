@@ -119,19 +119,22 @@
   });
 })();
 
-/* ---------- Email links (assembled at runtime to defeat scrapers) ---------- */
+/* ---------- Email links: open Gmail compose in a new tab (assembled at runtime to defeat scrapers) ---------- */
 (function () {
   // address stored reversed so it never appears in source as plain text
   var addr = "moc.liamg@8091jshsabuS".split("").reverse().join("");
   document.querySelectorAll(".js-email").forEach(function (a) {
     var subject = a.getAttribute("data-subject");
     var body = a.getAttribute("data-body");
-    var params = [];
-    if (subject) params.push("subject=" + encodeURIComponent(subject));
-    if (body) params.push("body=" + encodeURIComponent(body.replace(/\\n/g, "\n")));
-    a.href = "mailto:" + addr + (params.length ? "?" + params.join("&") : "");
+    var qs = "to=" + encodeURIComponent(addr);
+    if (subject) qs += "&su=" + encodeURIComponent(subject);
+    if (body) qs += "&body=" + encodeURIComponent(body.replace(/\\n/g, "\n"));
+    // Gmail compose opens reliably in the browser, no desktop mail client needed
+    a.href = "https://mail.google.com/mail/?view=cm&fs=1&" + qs;
+    a.target = "_blank";
+    a.rel = "noopener";
     var label = a.querySelector(".email-text");
-    if (label) label.textContent = addr; // replace human-readable [at]/[dot] form with clickable address
+    if (label) label.textContent = addr; // reveal the address for copy/paste
   });
 })();
 
