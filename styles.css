@@ -25,7 +25,12 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
-  background: var(--bg);
+  background:
+    radial-gradient(ellipse 70% 55% at 50% -8%, rgba(34, 229, 140, 0.10), transparent 60%),
+    radial-gradient(ellipse 55% 45% at 100% 25%, rgba(56, 189, 248, 0.08), transparent 55%),
+    radial-gradient(ellipse 55% 45% at 0% 72%, rgba(167, 139, 250, 0.08), transparent 55%),
+    var(--bg);
+  background-attachment: fixed;
   color: var(--text);
   font-family: var(--sans);
   line-height: 1.65;
@@ -475,8 +480,56 @@ a:hover { text-decoration: underline; }
   .term-body { font-size: 0.7rem; }
   .contact-link { min-width: 100%; }
 }
+/* ============ scroll progress bar ============ */
+.scroll-progress {
+  position: fixed; top: 0; left: 0; height: 3px; width: 0;
+  background: var(--grad); background-size: 100vw auto;
+  z-index: 200; transition: width 0.1s linear;
+}
+
+/* ============ active nav (scroll-spy) ============ */
+.nav-links a.active { color: var(--accent); }
+.nav-links a.active::after {
+  content: ""; display: block; height: 2px; margin-top: 2px; border-radius: 2px;
+  background: var(--grad);
+}
+.nav-links a.nav-cta.active::after { display: none; }
+
+/* ============ availability pill ============ */
+.avail-pill {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-family: var(--mono); font-size: 0.78rem; color: var(--accent);
+  background: var(--accent-soft); border: 1px solid rgba(34, 229, 140, 0.3);
+  padding: 0.35rem 0.85rem; border-radius: 999px; margin-bottom: 1.1rem;
+}
+.avail-dot {
+  width: 8px; height: 8px; border-radius: 50%; background: var(--accent);
+  box-shadow: 0 0 0 0 rgba(34, 229, 140, 0.6); animation: availPulse 2s infinite;
+}
+@keyframes availPulse {
+  0% { box-shadow: 0 0 0 0 rgba(34, 229, 140, 0.5); }
+  70% { box-shadow: 0 0 0 7px rgba(34, 229, 140, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(34, 229, 140, 0); }
+}
+
+/* ============ frameworks & compliance band ============ */
+.frameworks {
+  margin-top: 1.4rem; background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: 12px; padding: 1.4rem 1.5rem; position: relative; overflow: hidden;
+}
+.frameworks::before {
+  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--grad);
+}
+.fw-title { font-family: var(--mono); font-size: 0.92rem; color: #f1f5fb; margin-bottom: 0.9rem; }
+.fw-tags span:hover { color: var(--accent3); border-color: var(--accent3); background: rgba(167,139,250,0.1); }
+
+/* ============ keyboard focus visibility ============ */
+a:focus-visible, button:focus-visible, .proj-card:focus-visible, .contact-link:focus-visible {
+  outline: 2px solid var(--accent2); outline-offset: 3px; border-radius: 4px;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; transition: none; }
-  .scan-line, .logo-cursor, .type-cursor, .blink, .tl-marker.current { animation: none; }
+  .scan-line, .logo-cursor, .type-cursor, .blink, .tl-marker.current, .avail-dot, .hero-name .accent { animation: none; }
   html { scroll-behavior: auto; }
 }

@@ -47,6 +47,7 @@
 </head>
 <body>
   <a href="#about" class="skip-link">Skip to content</a>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
   <canvas id="matrix-bg" aria-hidden="true"></canvas>
   <div class="scan-line" aria-hidden="true"></div>
 
@@ -73,6 +74,7 @@
   <header class="hero" id="home">
     <div class="hero-content">
       <p class="hero-pre reveal">root@dfir:~$ whoami</p>
+      <span class="avail-pill reveal"><span class="avail-dot"></span> Available for senior DFIR &amp; SOC roles</span>
       <h1 class="hero-name reveal">SUBASH<br /><span class="accent">JAGANATHAN</span></h1>
       <div class="hero-type reveal">
         <span class="prompt">&gt;</span> <span id="typewriter"></span><span class="type-cursor">▋</span>
@@ -169,7 +171,7 @@
             <span>Splunk</span><span>IBM QRadar</span><span>MS Sentinel</span><span>ELK Stack</span><span>Wazuh</span>
             <span>CrowdStrike NG-SIEM</span><span>Innspark</span>
             <span>CrowdStrike Falcon</span><span>Defender XDR</span><span>Cortex XDR</span><span>SentinelOne</span>
-            <span>Trend Micro Vision One</span><span>Heimdal</span><span>Velociraptor</span>
+            <span>Trend Micro Vision One</span><span>Heimdal</span><span>Velociraptor</span><span>Sysmon</span><span>Cortex XSOAR</span>
           </div>
         </div>
         <div class="skill-card reveal">
@@ -191,7 +193,7 @@
         <div class="skill-card reveal">
           <div class="skill-head"><span class="skill-icon"><svg aria-hidden="true" class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span><h3>Network &amp; Threat Intel</h3></div>
           <div class="tags">
-            <span>Wireshark</span><span>Zeek</span><span>Suricata</span><span>NetworkMiner</span><span>tcpdump</span>
+            <span>Wireshark</span><span>Zeek</span><span>Suricata</span><span>NetworkMiner</span><span>tcpdump</span><span>Security Onion</span><span>Arkime</span>
             <span>MISP</span><span>OpenCTI</span><span>AlienVault OTX</span><span>GreyNoise</span><span>Shodan</span><span>CloudSEK</span>
             <span>MITRE ATT&amp;CK</span><span>OSINT Framework</span>
           </div>
@@ -201,9 +203,17 @@
           <div class="tags">
             <span>Nessus</span><span>Rapid7 InsightVM</span><span>Burp Suite</span><span>OWASP ZAP</span><span>Qualys</span><span>Acunetix</span>
             <span>Nmap</span><span>SQLMap</span><span>Checkmarx</span><span>ScoutSuite</span><span>Prowler</span>
-            <span>AWS</span><span>Azure</span><span>Oracle Cloud</span><span>LLM Security</span><span>MCP</span><span>Agentic AI Security</span>
-            <span>Claude API</span><span>Python</span>
+            <span>AWS</span><span>Azure</span><span>Oracle Cloud</span><span>AWS GuardDuty</span><span>Defender for Cloud</span>
+            <span>LLM Security</span><span>MCP</span><span>Agentic AI Security</span><span>Claude API</span><span>Python</span>
           </div>
+        </div>
+      </div>
+
+      <div class="frameworks reveal">
+        <h3 class="fw-title">Frameworks &amp; Compliance</h3>
+        <div class="tags fw-tags">
+          <span>MITRE ATT&amp;CK</span><span>NIST CSF</span><span>ISO 27001</span><span>OWASP</span><span>Zero Trust</span>
+          <span>SSDLC</span><span>Cyber Kill Chain</span><span>SEBI</span><span>RBI</span><span>PCI DSS</span>
         </div>
       </div>
     </section>

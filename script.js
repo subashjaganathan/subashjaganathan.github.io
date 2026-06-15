@@ -135,5 +135,41 @@
   });
 })();
 
+/* ---------- Scroll progress bar ---------- */
+(function () {
+  var bar = document.getElementById("scrollProgress");
+  if (!bar) return;
+  function update() {
+    var h = document.documentElement;
+    var scrolled = h.scrollTop / (h.scrollHeight - h.clientHeight);
+    bar.style.width = Math.max(0, Math.min(1, scrolled)) * 100 + "%";
+  }
+  window.addEventListener("scroll", update, { passive: true });
+  window.addEventListener("resize", update);
+  update();
+})();
+
+/* ---------- Scroll-spy: highlight active nav link ---------- */
+(function () {
+  var links = [...document.querySelectorAll('.nav-links a[href^="#"]')];
+  var map = {};
+  links.forEach(function (a) {
+    var id = a.getAttribute("href").slice(1);
+    if (id) map[id] = a;
+  });
+  var sections = Object.keys(map).map(function (id) { return document.getElementById(id); }).filter(Boolean);
+  if (!sections.length) return;
+
+  var obs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        links.forEach(function (l) { l.classList.remove("active"); });
+        if (map[e.target.id]) map[e.target.id].classList.add("active");
+      }
+    });
+  }, { rootMargin: "-45% 0px -50% 0px", threshold: 0 });
+  sections.forEach(function (s) { obs.observe(s); });
+})();
+
 /* ---------- Footer year ---------- */
 document.getElementById("year").textContent = new Date().getFullYear();
