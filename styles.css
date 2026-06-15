@@ -12,8 +12,12 @@
   --accent: #22e58c;
   --accent-soft: rgba(34, 229, 140, 0.12);
   --accent2: #38bdf8;
+  --accent3: #a78bfa;
+  --accent4: #f472b6;
   --red: #ff5c5c;
   --amber: #fbbf24;
+  --grad: linear-gradient(120deg, #22e58c 0%, #38bdf8 50%, #a78bfa 100%);
+  --grad-warm: linear-gradient(120deg, #38bdf8 0%, #a78bfa 60%, #f472b6 100%);
   --mono: "JetBrains Mono", Consolas, monospace;
   --sans: "Sora", "Segoe UI", sans-serif;
 }
@@ -131,7 +135,14 @@ a:hover { text-decoration: underline; }
   letter-spacing: -1px; color: #f1f5fb;
 }
 .accent { color: var(--accent); }
-.hero-name .accent { text-shadow: 0 0 32px rgba(34, 229, 140, 0.45); }
+.hero-name .accent {
+  background: var(--grad); background-size: 200% auto;
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent;
+  filter: drop-shadow(0 0 28px rgba(56, 189, 248, 0.35));
+  animation: gradShift 8s ease infinite;
+}
+@keyframes gradShift { 0%,100% { background-position: 0% center; } 50% { background-position: 100% center; } }
 .hero-type {
   font-family: var(--mono); font-size: clamp(1rem, 2.2vw, 1.3rem);
   color: var(--accent2); margin: 1.1rem 0 1rem; min-height: 1.8em;
@@ -148,10 +159,11 @@ a:hover { text-decoration: underline; }
 }
 .btn:hover { text-decoration: none; transform: translateY(-2px); }
 .btn-primary {
-  background: var(--accent); color: #04130b; font-weight: 700;
+  background: var(--grad); background-size: 150% auto; color: #04130b; font-weight: 700;
   box-shadow: 0 4px 24px rgba(34, 229, 140, 0.3);
+  transition: all 0.3s;
 }
-.btn-primary:hover { box-shadow: 0 6px 32px rgba(34, 229, 140, 0.5); }
+.btn-primary:hover { background-position: right center; box-shadow: 0 6px 34px rgba(56, 189, 248, 0.45); }
 .btn-ghost { border: 1px solid var(--border); color: var(--text); }
 .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
 
@@ -199,10 +211,15 @@ a:hover { text-decoration: underline; }
 }
 .section-title::before { content: "$"; color: var(--accent); }
 .section-title::after {
-  content: ""; flex: 1; height: 1px;
-  background: linear-gradient(90deg, var(--border), transparent);
+  content: ""; flex: 1; height: 2px; border-radius: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2) 40%, var(--accent3) 70%, transparent);
+  opacity: 0.5;
 }
-.sec-num { color: var(--accent); font-size: 0.85em; }
+.sec-num {
+  font-size: 0.85em;
+  background: var(--grad); -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent;
+}
 
 /* ============ about ============ */
 .about-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 2.5rem; align-items: start; }
@@ -236,11 +253,30 @@ a:hover { text-decoration: underline; }
 .skill-card {
   background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px;
   padding: 1.5rem; transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+  position: relative; overflow: hidden;
 }
+/* colored top accent bar, distinct per card */
+.skill-card::before {
+  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: var(--card-accent, var(--accent)); opacity: 0.9;
+}
+.skill-card:nth-child(1) { --card-accent: #22e58c; }
+.skill-card:nth-child(2) { --card-accent: #38bdf8; }
+.skill-card:nth-child(3) { --card-accent: #a78bfa; }
+.skill-card:nth-child(4) { --card-accent: #f472b6; }
+.skill-card:nth-child(5) { --card-accent: #fbbf24; }
+.skill-card:nth-child(6) { --card-accent: #2dd4bf; }
+.skill-card:nth-child(1) .skill-icon .ico { stroke: #22e58c; }
+.skill-card:nth-child(2) .skill-icon .ico { stroke: #38bdf8; }
+.skill-card:nth-child(3) .skill-icon .ico { stroke: #a78bfa; }
+.skill-card:nth-child(4) .skill-icon .ico { stroke: #f472b6; }
+.skill-card:nth-child(5) .skill-icon .ico { stroke: #fbbf24; }
+.skill-card:nth-child(6) .skill-icon .ico { stroke: #2dd4bf; }
 .skill-card:hover {
-  transform: translateY(-4px); border-color: var(--accent);
-  box-shadow: 0 12px 36px rgba(34, 229, 140, 0.1);
+  transform: translateY(-4px); border-color: var(--card-accent, var(--accent));
+  box-shadow: 0 12px 36px color-mix(in srgb, var(--card-accent, var(--accent)) 18%, transparent);
 }
+.skill-card:hover .tags span:hover { color: var(--card-accent); border-color: var(--card-accent); }
 .skill-head { display: flex; align-items: center; gap: 0.7rem; margin-bottom: 1rem; }
 .skill-icon { font-size: 1.4rem; }
 .skill-head h3 { font-size: 1.02rem; color: #f1f5fb; }
@@ -340,9 +376,12 @@ a:hover { text-decoration: underline; }
 }
 .stat:hover { border-color: var(--accent); transform: translateY(-3px); }
 .stat-num, .stat-plus {
-  font-family: var(--mono); font-size: 2.1rem; font-weight: 700; color: var(--accent);
-  text-shadow: 0 0 22px rgba(34, 229, 140, 0.4);
+  font-family: var(--mono); font-size: 2.1rem; font-weight: 700;
+  background: var(--grad); -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent;
 }
+/* alternate stat colors for a vibrant rhythm */
+.stat:nth-child(2n) .stat-num, .stat:nth-child(2n) .stat-plus { background: var(--grad-warm); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
 .stat p { color: var(--text-dim); font-size: 0.8rem; margin-top: 0.4rem; }
 
 .impact-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.3rem; }
