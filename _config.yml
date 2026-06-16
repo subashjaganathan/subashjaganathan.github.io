@@ -12,3 +12,7 @@ exclude:
   - Gemfile.lock
   - README.md
   - vendor
+  - Rakefile
+  - lib
+  - scripts
+  - .gitattributes
