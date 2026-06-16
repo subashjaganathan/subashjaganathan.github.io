@@ -76,7 +76,7 @@ a:hover { text-decoration: underline; }
 /* ============ background fx ============ */
 #matrix-bg {
   position: fixed; inset: 0; z-index: -2;
-  opacity: 0.14;
+  opacity: 0.55;
 }
 .scan-line {
   position: fixed; left: 0; right: 0; height: 120px; z-index: -1;

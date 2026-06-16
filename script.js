@@ -32,39 +32,82 @@
   tick();
 })();
 
-/* ---------- Matrix rain background ---------- */
+/* ---------- Network constellation background (threat-infra mapping vibe) ---------- */
 (function () {
   var canvas = document.getElementById("matrix-bg");
   if (!canvas) return;
   var ctx = canvas.getContext("2d");
-  var chars = "01アイウエオカキクケコ$#@&%<>/\\{}[]";
-  var fontSize = 14, drops = [], cols = 0;
-
-  function resize() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    cols = Math.floor(canvas.width / fontSize);
-    drops = new Array(cols).fill(1).map(function () { return Math.floor(Math.random() * canvas.height / fontSize); });
-  }
-  resize();
-  window.addEventListener("resize", resize);
-
+  var nodes = [], W = 0, H = 0;
   var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if (reduced) return;
+  var LINK = 150; // px distance within which two nodes are linked
 
-  setInterval(function () {
-    if (document.hidden) return; // pause when tab is in background
-    ctx.fillStyle = "rgba(6, 10, 18, 0.1)";
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = "#22e58c";
-    ctx.font = fontSize + "px monospace";
-    for (var i = 0; i < drops.length; i++) {
-      var ch = chars.charAt(Math.floor(Math.random() * chars.length));
-      ctx.fillText(ch, i * fontSize, drops[i] * fontSize);
-      if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
-      drops[i]++;
+  function nodeCount() {
+    return Math.max(22, Math.min(80, Math.floor((W * H) / 24000)));
+  }
+
+  function viewport() {
+    return [
+      window.innerWidth || document.documentElement.clientWidth || 0,
+      window.innerHeight || document.documentElement.clientHeight || 0
+    ];
+  }
+
+  function init() {
+    var v = viewport();
+    W = canvas.width = v[0];
+    H = canvas.height = v[1];
+    nodes = [];
+    for (var i = 0; i < nodeCount(); i++) {
+      nodes.push({
+        x: Math.random() * W,
+        y: Math.random() * H,
+        vx: (Math.random() - 0.5) * 0.32,
+        vy: (Math.random() - 0.5) * 0.32
+      });
     }
-  }, 70);
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+    // links
+    for (var i = 0; i < nodes.length; i++) {
+      var a = nodes[i];
+      a.x += a.vx; a.y += a.vy;
+      if (a.x <= 0 || a.x >= W) a.vx *= -1;
+      if (a.y <= 0 || a.y >= H) a.vy *= -1;
+      for (var j = i + 1; j < nodes.length; j++) {
+        var b = nodes[j];
+        var dx = a.x - b.x, dy = a.y - b.y;
+        var dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < LINK) {
+          ctx.strokeStyle = "rgba(56, 189, 248, " + (0.16 * (1 - dist / LINK)) + ")";
+          ctx.lineWidth = 1;
+          ctx.beginPath();
+          ctx.moveTo(a.x, a.y);
+          ctx.lineTo(b.x, b.y);
+          ctx.stroke();
+        }
+      }
+    }
+    // nodes
+    ctx.fillStyle = "rgba(34, 229, 140, 0.55)";
+    for (var k = 0; k < nodes.length; k++) {
+      ctx.beginPath();
+      ctx.arc(nodes[k].x, nodes[k].y, 1.6, 0, Math.PI * 2);
+      ctx.fill();
+    }
+  }
+
+  function loop() {
+    if (!W || !H || nodes.length === 0) init(); // self-heal if it started before layout
+    if ((W && H) && !document.hidden) draw();
+    requestAnimationFrame(loop);
+  }
+
+  init();
+  window.addEventListener("resize", init);
+  if (reduced) { draw(); return; } // static single frame, no animation
+  loop();
 })();
 
 /* ---------- Scroll reveal ---------- */
