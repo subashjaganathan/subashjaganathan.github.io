@@ -1,0 +1,5 @@
+<ul class="nav-links" id="navLinks">
+{%- for item in site.data.nav %}
+        <li><a href="{{ item.href }}"{% if item.cta %} class="nav-cta"{% endif %}>{{ item.label }}</a></li>
+{%- endfor %}
+      </ul>

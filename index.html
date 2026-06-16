@@ -1,3 +1,7 @@
+---
+# Built with Jekyll (Ruby static-site generator).
+# Nav is rendered from _data/nav.yml via Liquid in _includes/nav-links.html.
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,17 +60,7 @@
     <div class="nav-inner">
       <a href="#home" class="nav-logo"><span class="logo-bracket">[</span>SJ<span class="logo-cursor">_</span><span class="logo-bracket">]</span></a>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#home">// home</a></li>
-        <li><a href="#about">// about</a></li>
-        <li><a href="#skills">// arsenal</a></li>
-        <li><a href="#projects">// projects</a></li>
-        <li><a href="#experience">// experience</a></li>
-        <li><a href="#impact">// impact</a></li>
-        <li><a href="#community">// community</a></li>
-        <li><a href="#certs">// certs</a></li>
-        <li><a href="#contact" class="nav-cta">contact --now</a></li>
-      </ul>
+      {% include nav-links.html %}
     </div>
   </nav>
 

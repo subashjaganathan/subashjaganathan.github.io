@@ -1,0 +1,14 @@
+# Jekyll configuration - Subash Jaganathan portfolio (built with Ruby/Jekyll)
+title: "Subash Jaganathan | Senior Cyber Security Consultant"
+description: "DFIR, SOC, Threat Hunting, Malware Analysis and AI Security."
+url: "https://dfir-hawk.github.io"
+baseurl: ""
+lang: en
+
+# Build settings
+markdown: kramdown
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
