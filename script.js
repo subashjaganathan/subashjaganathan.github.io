@@ -188,5 +188,66 @@
   sections.forEach(function (s) { obs.observe(s); });
 })();
 
+/* ---------- "Decrypt" reveal on section titles ---------- */
+(function () {
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  var GLYPHS = "ABCDEFGHJKLMNPQRSTUVWXYZ0123456789!<>-_/\\#$%&*";
+
+  function scramble(node, finalText) {
+    var len = finalText.length, frame = 0;
+    var timer = setInterval(function () {
+      frame++;
+      var locked = frame * 0.8; // chars that have settled, left to right
+      var out = "";
+      for (var i = 0; i < len; i++) {
+        var ch = finalText.charAt(i);
+        if (ch === " " || i < locked) out += ch;
+        else out += GLYPHS.charAt(Math.floor(Math.random() * GLYPHS.length));
+      }
+      node.nodeValue = out;
+      if (locked >= len) { clearInterval(timer); node.nodeValue = finalText; }
+    }, 30);
+  }
+
+  function lastTextNode(el) {
+    for (var i = el.childNodes.length - 1; i >= 0; i--) {
+      var n = el.childNodes[i];
+      if (n.nodeType === 3 && n.nodeValue.trim()) return n;
+    }
+    return null;
+  }
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      io.unobserve(e.target);
+      var node = lastTextNode(e.target);
+      if (node) scramble(node, node.nodeValue);
+    });
+  }, { threshold: 0.6 });
+  document.querySelectorAll(".section-title").forEach(function (t) { io.observe(t); });
+})();
+
+/* ---------- Terminal boot sequence (hero IR panel) ---------- */
+(function () {
+  var body = document.getElementById("termBody");
+  if (!body) return;
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  var lines = [].slice.call(body.querySelectorAll("p"));
+  lines.forEach(function (p) {
+    p.style.opacity = "0";
+    p.style.transform = "translateY(4px)";
+    p.style.transition = "opacity 0.3s ease, transform 0.3s ease";
+  });
+  var i = 0;
+  (function reveal() {
+    if (i >= lines.length) return;
+    lines[i].style.opacity = "1";
+    lines[i].style.transform = "none";
+    i++;
+    setTimeout(reveal, 230);
+  })();
+})();
+
 /* ---------- Footer year ---------- */
 document.getElementById("year").textContent = new Date().getFullYear();
