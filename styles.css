@@ -295,7 +295,7 @@ a:hover { text-decoration: underline; }
 
 /* ============ projects ============ */
 .section-intro { color: var(--text-dim); margin: -1.6rem 0 2.2rem; font-size: 0.97rem; }
-.proj-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 1.3rem; }
+.proj-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(255px, 1fr)); gap: 1.3rem; }
 .proj-card {
   display: flex; flex-direction: column; gap: 0.55rem;
   background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px;
