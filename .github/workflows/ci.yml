@@ -1,0 +1,37 @@
+name: CI
+
+# Validation only - builds the site and checks link/asset integrity on every push
+# and PR. It does NOT deploy; GitHub Pages continues to publish from your branch as
+# before, so this workflow can never take the live site down.
+
+on:
+  push:
+    branches: [main, "feature/**"]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+          bundler-cache: true
+
+      - name: Validate internal anchors & local assets
+        run: ruby scripts/check_links.rb
+
+      - name: Build site with Jekyll (custom plugins run here, not in Pages safe mode)
+        run: bundle exec jekyll build
+        env:
+          JEKYLL_ENV: production
+
+      - name: Ensure the build produced output
+        run: test -f _site/index.html && echo "build OK"

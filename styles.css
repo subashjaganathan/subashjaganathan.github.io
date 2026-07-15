@@ -533,3 +533,40 @@ a:focus-visible, button:focus-visible, .proj-card:focus-visible, .contact-link:f
   .scan-line, .logo-cursor, .type-cursor, .blink, .tl-marker.current, .avail-dot, .hero-name .accent { animation: none; }
   html { scroll-behavior: auto; }
 }
+
+/* ============ incoming-role badge (timeline) ============ */
+.tl-incoming {
+  display: inline-block; margin-left: 8px; padding: 2px 8px; vertical-align: middle;
+  font-family: "JetBrains Mono", monospace; font-size: 0.6rem; font-weight: 700;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: #04140c; background: #22e58c; border-radius: 10px;
+}
+
+/* ============ print / "Save as PDF" - clean CV layout ============ */
+@media print {
+  * { background: transparent !important; color: #111 !important; box-shadow: none !important; text-shadow: none !important; }
+  body { background: #fff !important; font-size: 11pt; line-height: 1.4; }
+  /* strip decorative / interactive chrome */
+  #matrix-bg, .scan-line, .scroll-progress, .nav, .nav-toggle, .scroll-hint,
+  .hero-terminal, .hero-badges, .hero-actions, .skip-link, .type-cursor,
+  .logo-cursor, .blink, .proj-more { display: none !important; }
+  a { color: #111 !important; text-decoration: none !important; }
+  .accent, .j-green, .t-green, .sec-num { color: #0a7a3f !important; }
+  main, .section { display: block !important; padding: 0 !important; margin: 0 0 12pt !important; }
+  .reveal { opacity: 1 !important; transform: none !important; }
+  .hero { min-height: auto !important; padding: 0 0 8pt !important; display: block !important; }
+  .hero-name { font-size: 22pt !important; line-height: 1.1; }
+  .hero-sub { font-size: 10.5pt !important; }
+  .section-title { font-size: 14pt !important; border-bottom: 1px solid #999; padding-bottom: 3pt; margin: 10pt 0 6pt; page-break-after: avoid; }
+  .skills-grid, .proj-grid, .impact-cards, .certs-grid, .stats-grid, .about-grid, .edu-row { display: block !important; }
+  .tl-card, .skill-card, .impact-card, .cert-group, .edu-card, .about-card, .about-text,
+  .proj-card, .stat, .contact-box, .frameworks { break-inside: avoid; page-break-inside: avoid;
+    border: 1px solid #ccc !important; border-radius: 6px; padding: 8pt !important; margin-bottom: 6pt; }
+  .tl-item { page-break-inside: avoid; margin-bottom: 8pt; }
+  .tl-marker { display: none !important; }
+  .tags span, .fw-tags span, .badge { border: 1px solid #999 !important; border-radius: 4px;
+    padding: 1px 5px; margin: 2px; display: inline-block; font-size: 9pt; }
+  .json-block { border: 1px solid #ccc; padding: 6pt; font-size: 9pt; }
+  .footer { border-top: 1px solid #ccc; margin-top: 10pt; font-size: 8pt; }
+  @page { margin: 12mm; }
+}
