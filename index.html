@@ -8,10 +8,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#060a12" />
-  <title>Subash Jaganathan | Senior Cyber Security Consultant | DFIR · SOC · Threat Hunting</title>
-  <meta name="description" content="Subash Jaganathan, Senior Cybersecurity Consultant specializing in DFIR, SOC operations, malware analysis, threat hunting and threat intelligence. 6+ years across banking, government and enterprise sectors." />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self'; connect-src 'self'; object-src 'none'; frame-src 'none'" />
+  <title>Subash Jaganathan | Senior Cyber Security Consultant | SOC · DFIR · Threat Hunting · OT/IoT Security</title>
+  <meta name="description" content="Subash Jaganathan - Senior Cyber Security Consultant specializing in SOC operations, DFIR, threat hunting and OT/IoT security. Incident response, malware analysis, threat intelligence, VAPT, and security programs aligned to ISO 27001, NIST CSF 2.0 and 800-53. 6+ years across banking, government and critical-infrastructure sectors." />
+  <link rel="canonical" href="https://subashjaganathan.github.io/" />
+  <meta name="author" content="Subash Jaganathan" />
   <meta property="og:title" content="Subash Jaganathan | Senior Cyber Security Consultant" />
-  <meta property="og:description" content="DFIR · SOC · Threat Hunting · Threat Intelligence · Malware Analysis · AI Security." />
+  <meta property="og:description" content="SOC · DFIR · Threat Hunting · OT/IoT Security · Threat Intelligence · Malware Analysis · Cyber Advisory · AI Security." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://subashjaganathan.github.io/" />
   <meta property="og:image" content="https://subashjaganathan.github.io/assets/og-image.png" />
@@ -19,7 +22,7 @@
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Subash Jaganathan | Senior Cyber Security Consultant" />
-  <meta name="twitter:description" content="DFIR · SOC · Threat Hunting · Threat Intelligence · Malware Analysis · AI Security" />
+  <meta name="twitter:description" content="SOC · DFIR · Threat Hunting · OT/IoT Security · Threat Intelligence · Malware Analysis · Cyber Advisory" />
   <meta name="twitter:image" content="https://subashjaganathan.github.io/assets/og-image.png" />
   <script type="application/ld+json">
   {
@@ -27,7 +30,7 @@
     "@type": "Person",
     "name": "Subash Jaganathan",
     "jobTitle": "Senior Cyber Security Consultant",
-    "worksFor": { "@type": "Organization", "name": "4i Apps Solutions Pvt. Ltd." },
+    "worksFor": { "@type": "Organization", "name": "PwC (PricewaterhouseCoopers)" },
     "url": "https://subashjaganathan.github.io/",
     "sameAs": [
       "https://www.linkedin.com/in/subash-j/",
@@ -40,17 +43,19 @@
       { "@type": "CollegeOrUniversity", "name": "Amrita Vishwa Vidyapeetham" },
       { "@type": "CollegeOrUniversity", "name": "Sri Krishna Arts and Science College" }
     ],
-    "knowsAbout": ["Digital Forensics", "Incident Response", "SOC Operations", "Threat Hunting", "Threat Intelligence", "Malware Analysis", "AI Security"]
+    "knowsAbout": ["Digital Forensics", "Incident Response", "SOC Operations", "Threat Hunting", "Threat Intelligence", "Malware Analysis", "AI Security", "Cyber Advisory", "Governance Risk and Compliance", "ISO/IEC 27001", "NIST Cybersecurity Framework", "NIST SP 800-53", "Risk Assessment", "Security Auditing", "OT Security", "ICS Security", "IoT Security", "Penetration Testing"]
   }
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Sora:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=2" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2322e58c' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M12 2l8 4v6c0 5.25-3.5 9.4-8 10-4.5-.6-8-4.75-8-10V6z'/></svg>" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
 </head>
 <body>
-  <a href="#about" class="skip-link">Skip to content</a>
+  <a href="#home" class="skip-link">Skip to content</a>
   <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
   <canvas id="matrix-bg" aria-hidden="true"></canvas>
   <div class="scan-line" aria-hidden="true"></div>
@@ -59,7 +64,7 @@
   <nav class="nav" id="nav">
     <div class="nav-inner">
       <a href="#home" class="nav-logo"><span class="logo-bracket">[</span>SJ<span class="logo-cursor">_</span><span class="logo-bracket">]</span></a>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-controls="navLinks" aria-expanded="false"><span></span><span></span><span></span></button>
       {% include nav-links.html %}
     </div>
   </nav>
@@ -72,18 +77,19 @@
       <div class="hero-type reveal">
         <span class="prompt">&gt;</span> <span id="typewriter"></span><span class="type-cursor">▋</span>
       </div>
-      <p class="hero-sub reveal">Senior Cyber Security Consultant specializing in <strong>Digital Forensics &amp; Incident Response</strong>.
-        I lead end-to-end IR engagements, perform forensic investigations across <strong>Windows, Linux, mobile &amp; cloud</strong>,
-        and hunt advanced threats including <strong>APTs, ransomware and insider attacks</strong> across banking, government and
-        enterprise environments. <strong>6+ years</strong> across <strong>threat hunting, incident response, SOC operations, threat intelligence and penetration testing</strong>.</p>
+      <p class="hero-sub reveal">Cyber security professional specializing in <strong>SOC operations, Digital Forensics &amp; Incident Response (DFIR),
+        threat hunting</strong> and <strong>OT / IoT security</strong>. I run end-to-end IR engagements and forensic investigations across
+        <strong>Windows, Linux, mobile, cloud and OT/ICS</strong>, hunt advanced threats (<strong>APTs, ransomware, insider attacks</strong>),
+        and advise on security programs aligned to <strong>ISO 27001, NIST CSF 2.0 &amp; 800-53</strong>. <strong>6+ years</strong> across
+        <strong>SOC, DFIR, threat hunting, threat intelligence, OT/IoT security, VAPT and GRC</strong> in banking, government and enterprise environments.</p>
       <div class="hero-actions reveal">
         <a href="#experience" class="btn btn-primary">View Track Record</a>
         <a href="#contact" class="btn btn-ghost js-email" data-subject="Resume request" data-body="Hi Subash, I would like to request your latest resume.\n\nName:\nCompany / Organization:\nRole:">Request Resume &#8599;</a>
         <a href="https://github.com/subashjaganathan" target="_blank" rel="noopener" class="btn btn-ghost">github/subashjaganathan ↗</a>
       </div>
       <div class="hero-badges reveal">
-        <span class="badge">DFIR</span><span class="badge">SOC</span><span class="badge">Threat Hunting</span>
-        <span class="badge">Malware RE</span><span class="badge">Threat Intel</span><span class="badge">Penetration Testing</span><span class="badge">AI Security</span><span class="badge">Trainer &amp; Speaker</span>
+        <span class="badge">SOC</span><span class="badge">DFIR</span><span class="badge">Threat Hunting</span><span class="badge">OT / IoT Security</span>
+        <span class="badge">Malware RE</span><span class="badge">Threat Intel</span><span class="badge">Penetration Testing</span><span class="badge">Cyber Advisory</span><span class="badge">GRC</span><span class="badge">AI Security</span><span class="badge">Trainer &amp; Speaker</span>
       </div>
     </div>
     <div class="hero-terminal reveal">
@@ -109,12 +115,12 @@
       <div class="about-grid">
         <div class="about-text reveal">
           <p>Results-driven cybersecurity professional with <strong>6+ years</strong> of hands-on experience specializing in
-            <strong>Digital Forensics &amp; Incident Response (DFIR)</strong>, <strong>Security Operations (SOC)</strong>,
-            <strong>Malware Analysis</strong>, <strong>Threat Hunting</strong> and <strong>Threat Intelligence</strong>,
-            with growing expertise in <strong>AI Security</strong>, LLM threat detection, and AI-assisted VAPT within SOC and IR workflows.</p>
-          <p>Proven record conducting in-depth forensic investigations across <strong>Windows, Linux, mobile and cloud</strong> environments,
+            <strong>Security Operations (SOC)</strong>, <strong>Digital Forensics &amp; Incident Response (DFIR)</strong>,
+            <strong>Threat Hunting</strong> and <strong>OT / IoT Security</strong>, backed by <strong>Malware Analysis</strong> and
+            <strong>Threat Intelligence</strong>, with growing expertise in <strong>AI Security</strong>, LLM threat detection and AI-assisted VAPT within SOC and IR workflows.</p>
+          <p>Proven record conducting in-depth forensic investigations across <strong>Windows, Linux, mobile, cloud and OT/ICS</strong> environments,
             leading SOC operations, and responding to sophisticated threats including <strong>APTs, ransomware and insider attacks</strong>
-            across banking, financial services, IT and government sectors.</p>
+            across banking, financial services, government and critical-infrastructure sectors.</p>
           <p>Recognized for driving measurable improvements in incident response maturity, forensic investigation depth, and
             regulatory compliance (<strong>SEBI · RBI · PCI DSS</strong>).</p>
           <div class="about-highlight">
@@ -133,13 +139,17 @@
           <h3>profile.json</h3>
           <pre class="json-block">{
   <span class="j-key">"name"</span>: <span class="j-val">"Subash Jaganathan"</span>,
-  <span class="j-key">"role"</span>: <span class="j-val">"Sr. Cyber Security Consultant"</span>,
-  <span class="j-key">"company"</span>: <span class="j-val">"4i Apps Solutions"</span>,
+  <span class="j-key">"role"</span>: <span class="j-val">"Sr. Cyber Security Associate"</span>,
+  <span class="j-key">"company"</span>: <span class="j-val">"PwC"</span>,
+  <span class="j-key">"experience"</span>: <span class="j-num">6</span>+ yrs,
+  <span class="j-key">"focus"</span>: [
+    <span class="j-val">"SOC"</span>, <span class="j-val">"DFIR"</span>,
+    <span class="j-val">"Threat Hunting"</span>,
+    <span class="j-val">"OT / IoT Security"</span>
+  ],
+  <span class="j-key">"sectors"</span>: <span class="j-val">"Govt · BFSI · Critical Infra"</span>,
   <span class="j-key">"location"</span>: <span class="j-val">"Coimbatore, IN"</span>,
-  <span class="j-key">"experience"</span>: <span class="j-num">6</span>+,
-  <span class="j-key">"education"</span>: <span class="j-val">"MCA Cyber Security"</span>,
-  <span class="j-key">"clearance"</span>: <span class="j-val">"Govt &amp; BFSI engagements"</span>,
-  <span class="j-key">"status"</span>: <span class="j-green">"ACTIVELY_HUNTING"</span>
+  <span class="j-key">"status"</span>: <span class="j-green">"THREAT_HUNTING"</span>
 }</pre>
         </aside>
       </div>
@@ -155,7 +165,7 @@
             <span>DFIR</span><span>SOC Operations</span><span>Memory Forensics</span><span>Mobile Forensics</span>
             <span>Cloud Forensics</span><span>Malware RE</span><span>Threat Hunting</span><span>Threat Intel</span>
             <span>OSINT</span><span>Dark Web Forensics</span><span>Purple Teaming</span><span>AI Security</span>
-            <span>Pen Testing</span><span>Data Recovery</span><span>GRC</span>
+            <span>Pen Testing</span><span>Data Recovery</span><span>GRC</span><span>Cyber Advisory</span><span>Risk Management</span><span>Security Audit</span><span>Compliance</span><span>OT / IoT Security</span><span>ICS / SCADA</span>
           </div>
         </div>
         <div class="skill-card reveal">
@@ -206,8 +216,8 @@
       <div class="frameworks reveal">
         <h3 class="fw-title">Frameworks &amp; Compliance</h3>
         <div class="tags fw-tags">
-          <span>MITRE ATT&amp;CK</span><span>NIST CSF</span><span>ISO 27001</span><span>OWASP</span><span>Zero Trust</span>
-          <span>SSDLC</span><span>Cyber Kill Chain</span><span>SEBI</span><span>RBI</span><span>PCI DSS</span>
+          <span>MITRE ATT&amp;CK</span><span>NIST CSF 2.0</span><span>NIST SP 800-53</span><span>ISO/IEC 27001:2022</span><span>ISO 22301 (BCM)</span><span>OWASP</span><span>Zero Trust</span>
+          <span>SSDLC</span><span>Cyber Kill Chain</span><span>DPDP Act</span><span>GDPR</span><span>SEBI</span><span>RBI</span><span>PCI DSS</span>
         </div>
       </div>
     </section>
@@ -254,8 +264,31 @@
           <div class="tl-marker current"></div>
           <div class="tl-card">
             <div class="tl-head">
+              <h3>Senior Associate - Cyber Security (Risk &amp; Regulatory) <span class="tl-incoming">Incoming</span></h3>
+              <span class="tl-date">Aug 2026</span>
+            </div>
+            <p class="tl-company">PwC (PricewaterhouseCoopers)</p>
+            <ul>
+              <li>Conduct comprehensive <strong>cybersecurity gap assessments</strong> across client environments, evaluating governance, processes and technical controls to baseline maturity and prioritize risk.</li>
+              <li>Design, develop, implement and maintain <strong>information security frameworks and control programs</strong> aligned to <strong>ISO/IEC 27001:2022</strong>, <strong>NIST CSF 2.0</strong>, <strong>NIST SP 800-53</strong> and other applicable industry standards.</li>
+              <li>Perform <strong>risk assessments</strong> spanning cybersecurity &amp; information-security risk, <strong>business continuity &amp; operational resilience</strong>, and <strong>data protection &amp; privacy</strong>.</li>
+              <li>Develop and document <strong>security policies, standards, procedures and guidelines</strong> aligned to international standards, contractual requirements and organizational objectives.</li>
+              <li>Lead independent <strong>third-party security assessments, audits and maturity evaluations</strong>, delivering clear, actionable and risk-prioritized recommendations.</li>
+              <li>Support clients in improving <strong>cybersecurity maturity</strong>: risk management, control design, remediation planning and continuous-improvement initiatives.</li>
+              <li>Deliver hands-on technical engagements spanning <strong>penetration testing (VAPT)</strong>, <strong>SOC operations &amp; detection</strong>, and <strong>digital forensics &amp; incident response (DFIR)</strong> for enterprise and critical-sector clients.</li>
+              <li>Assess and secure <strong>Operational Technology &amp; IoT (OT / ICS / IoT)</strong> environments - governance, risk and technical controls for industrial, energy and critical-infrastructure clients.</li>
+              <li>Manage <strong>client engagements end-to-end</strong> - RFP responses &amp; proposal development, engagement planning, execution &amp; delivery management, and stakeholder communication &amp; reporting.</li>
+              <li>Collaborate across <strong>IT, engineering, legal, compliance and business leadership</strong> and external stakeholders to drive security outcomes.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="tl-item reveal">
+          <div class="tl-marker"></div>
+          <div class="tl-card">
+            <div class="tl-head">
               <h3>Senior Cyber Security Consultant</h3>
-              <span class="tl-date">Sep 2025 - Present</span>
+              <span class="tl-date">Sep 2025 - Jul 2026</span>
             </div>
             <p class="tl-company">4i Apps Solutions Pvt. Ltd.</p>
             <ul>
@@ -488,8 +521,8 @@
     <section class="section contact" id="contact">
       <h2 class="section-title reveal"><span class="sec-num">08.</span> ssh subash@contact</h2>
       <div class="contact-box reveal">
-        <p class="contact-lead">Open to senior <span class="accent">DFIR</span> and <span class="accent">SOC leadership</span> opportunities.
-          Whether it's an active incident, a threat hunt, or building IR capability from scratch, let's talk.</p>
+        <p class="contact-lead">Always up for a good security conversation - <span class="accent">DFIR</span> war-stories, a threat hunt,
+          <span class="accent">SOC &amp; OT/IoT defense</span>, speaking, mentoring or collaboration. If it's about defending or investigating, let's talk.</p>
         <div class="contact-links">
           <a href="#contact" class="contact-link js-email"><span class="cl-icon"><svg aria-hidden="true" class="ico" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 6L2 7"/></svg></span><span><small>Email</small><span class="email-text">Subashsj1908 [at] gmail [dot] com</span></span></a>
           <noscript><span class="contact-noscript">Email: Subashsj1908 [at] gmail [dot] com</span></noscript>
@@ -510,6 +543,6 @@
     <p class="footer-sub">No threats were left unhunted in the making of this site.</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=4"></script>
 </body>
 </html>

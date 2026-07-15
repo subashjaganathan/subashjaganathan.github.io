@@ -7,6 +7,12 @@ lang: en
 
 # Build settings
 markdown: kramdown
+
+# Plugins on the GitHub Pages whitelist (these run even in Pages safe mode; unlike the
+# custom _plugins/*.rb, which only run via the GitHub Actions build workflow).
+plugins:
+  - jekyll-sitemap
+
 exclude:
   - Gemfile
   - Gemfile.lock
