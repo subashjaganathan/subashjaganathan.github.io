@@ -170,13 +170,6 @@
   });
 })();
 
-/* ---------- Print / Save as PDF resume ---------- */
-(function () {
-  document.querySelectorAll(".js-print").forEach(function (b) {
-    b.addEventListener("click", function () { window.print(); });
-  });
-})();
-
 /* ---------- Email links: device-aware composer (assembled at runtime to defeat scrapers) ---------- */
 (function () {
   // address stored reversed so it never appears in source as plain text
