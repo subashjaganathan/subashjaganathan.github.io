@@ -3,9 +3,10 @@
 /* ---------- Typewriter ---------- */
 (function () {
   var roles = [
-    "Digital Forensics & Incident Response",
     "SOC Operations & Detection Engineering",
+    "Digital Forensics & Incident Response",
     "Threat Hunting | MITRE ATT&CK",
+    "OT / IoT Security | ICS & SCADA Defense",
     "Malware Analysis & Reverse Engineering",
     "Threat Intelligence & Dark Web Forensics",
     "Cybercrime Investigator | Cyber Forensic Expert",
