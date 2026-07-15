@@ -156,9 +156,24 @@
 
   var toggle = document.getElementById("navToggle");
   var links = document.getElementById("navLinks");
-  toggle.addEventListener("click", function () { links.classList.toggle("open"); });
+  function setExpanded(v) { toggle.setAttribute("aria-expanded", v ? "true" : "false"); }
+  setExpanded(false);
+  toggle.addEventListener("click", function () { setExpanded(links.classList.toggle("open")); });
   links.querySelectorAll("a").forEach(function (a) {
-    a.addEventListener("click", function () { links.classList.remove("open"); });
+    a.addEventListener("click", function () { links.classList.remove("open"); setExpanded(false); });
+  });
+  // ESC closes the mobile menu and returns focus to the toggle
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && links.classList.contains("open")) {
+      links.classList.remove("open"); setExpanded(false); toggle.focus();
+    }
+  });
+})();
+
+/* ---------- Print / Save as PDF resume ---------- */
+(function () {
+  document.querySelectorAll(".js-print").forEach(function (b) {
+    b.addEventListener("click", function () { window.print(); });
   });
 })();
 

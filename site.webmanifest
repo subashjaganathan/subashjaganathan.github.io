@@ -1,0 +1,15 @@
+{
+  "name": "Subash Jaganathan - Cyber Security",
+  "short_name": "Subash J",
+  "description": "Senior Cyber Security Consultant - DFIR, Cyber Advisory & GRC.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#060a12",
+  "theme_color": "#060a12",
+  "icons": [
+    { "src": "/assets/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/assets/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/assets/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}
