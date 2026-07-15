@@ -1,3 +1,3 @@
-# Subash Jaganathan — Portfolio
+# Subash Jaganathan - Portfolio
 
 **Live:** https://subashjaganathan.github.io/
