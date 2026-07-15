@@ -6,7 +6,7 @@ Personal portfolio of **Subash Jaganathan**, Senior Cyber Security Consultant (D
 
 A single-page, dependency-free site with a DFIR / terminal aesthetic — hero IR terminal,
 animated impact counters, scroll-spy nav, a "decrypt" reveal on section titles, and a
-print stylesheet that turns the page into a clean one-click PDF résumé.
+print stylesheet so the browser's print / Save-as-PDF produces a clean CV layout.
 
 ## Tech stack
 
