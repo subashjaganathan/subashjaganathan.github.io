@@ -238,11 +238,58 @@ a:hover { text-decoration: underline; }
 .about-highlight p { margin: 0; color: var(--text); font-size: 0.95rem; }
 .hl-icon { font-size: 1.5rem; }
 
+.about-side { display: flex; flex-direction: column; gap: 1.5rem; }
 .about-card {
   background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px;
-  padding: 0; overflow: hidden; position: sticky; top: 90px;
+  padding: 0; overflow: hidden;
   box-shadow: 0 22px 55px -30px rgba(0, 0, 0, 0.85);
 }
+/* ---- creative cyber portrait frame ---- */
+.about-photo { margin: 0; }
+.photo-frame {
+  position: relative; border-radius: 14px; overflow: hidden;
+  aspect-ratio: 3 / 2; background: var(--bg-card);
+  box-shadow: 0 22px 55px -30px rgba(0, 0, 0, 0.85);
+}
+.photo-frame::before {
+  content: ""; position: absolute; inset: 0; z-index: 3; pointer-events: none;
+  border-radius: 14px; padding: 1.5px; background: var(--grad);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude;
+  opacity: 0.55; transition: opacity 0.35s ease;
+}
+.photo-frame:hover::before { opacity: 1; }
+.photo-img {
+  display: block; width: 100%; height: 100%;
+  object-fit: cover; object-position: center 22%;
+  filter: grayscale(18%) contrast(1.02); transition: filter 0.4s ease, transform 0.5s ease;
+}
+.photo-frame:hover .photo-img { filter: none; transform: scale(1.035); }
+.photo-scan {
+  position: absolute; inset: 0; z-index: 1; pointer-events: none; opacity: 0.5;
+  background: repeating-linear-gradient(rgba(34, 229, 140, 0.06) 0 1px, transparent 1px 3px);
+}
+.photo-corner { position: absolute; width: 16px; height: 16px; z-index: 2; pointer-events: none; }
+.photo-corner.tl { top: 9px; left: 9px; border-top: 2px solid var(--accent); border-left: 2px solid var(--accent); }
+.photo-corner.tr { top: 9px; right: 9px; border-top: 2px solid var(--accent); border-right: 2px solid var(--accent); }
+.photo-corner.bl { bottom: 9px; left: 9px; border-bottom: 2px solid var(--accent); border-left: 2px solid var(--accent); }
+.photo-corner.br { bottom: 9px; right: 9px; border-bottom: 2px solid var(--accent); border-right: 2px solid var(--accent); }
+.photo-status {
+  position: absolute; bottom: 11px; left: 11px; z-index: 3;
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.05em;
+  color: var(--accent); background: rgba(6, 10, 18, 0.72);
+  border: 1px solid rgba(34, 229, 140, 0.3); border-radius: 999px; padding: 0.2rem 0.6rem;
+}
+.photo-status i {
+  width: 7px; height: 7px; border-radius: 50%; background: var(--accent);
+  box-shadow: 0 0 0 0 rgba(34, 229, 140, 0.5); animation: branchPulse 2.4s ease-out infinite;
+}
+.photo-cap {
+  margin-top: 0.75rem; text-align: center;
+  font-family: var(--mono); font-size: 0.8rem; color: var(--text);
+}
+.photo-cap-role { color: var(--text-dim); }
 /* editor window chrome */
 .code-chrome {
   display: flex; align-items: center; gap: 0.75rem;
@@ -516,6 +563,7 @@ a:hover { text-decoration: underline; }
   .hero-terminal { max-width: 560px; }
   .about-grid { grid-template-columns: 1fr; }
   .about-card { position: static; }
+  .about-side { max-width: 360px; margin: 0 auto; width: 100%; }
   .edu-row { grid-template-columns: 1fr; }
 }
 @media (max-width: 760px) {
@@ -584,7 +632,7 @@ a:focus-visible, button:focus-visible, .proj-card:focus-visible, .contact-link:f
 
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; transition: none; }
-  .scan-line, .logo-cursor, .type-cursor, .blink, .tl-marker.current, .avail-dot, .hero-name .accent, .code-branch-dot { animation: none; }
+  .scan-line, .logo-cursor, .type-cursor, .blink, .tl-marker.current, .avail-dot, .hero-name .accent, .code-branch-dot, .photo-status i { animation: none; }
   html { scroll-behavior: auto; }
 }
 
