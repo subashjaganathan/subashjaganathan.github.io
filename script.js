@@ -3,14 +3,14 @@
 /* ---------- Typewriter ---------- */
 (function () {
   var roles = [
-    "SOC Operations & Detection Engineering",
     "Digital Forensics & Incident Response",
+    "SOC Operations & Detection Engineering",
+    "Penetration Testing & VAPT",
+    "Cloud Security | AWS · Azure · OCI",
+    "AI Security | LLM Threat Modeling",
     "Threat Hunting | MITRE ATT&CK",
-    "OT / IoT Security | ICS & SCADA Defense",
     "Malware Analysis & Reverse Engineering",
-    "Threat Intelligence & Dark Web Forensics",
-    "Cybercrime Investigator | Cyber Forensic Expert",
-    "AI Security | LLM Threat Modeling"
+    "Cybercrime Investigator | Cyber Forensic Expert"
   ];
   var el = document.getElementById("typewriter");
   if (!el) return;
