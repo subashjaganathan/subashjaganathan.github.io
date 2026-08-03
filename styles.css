@@ -621,6 +621,66 @@ a:focus-visible, button:focus-visible, .proj-card:focus-visible, .contact-link:f
   .tags span, .fw-tags span, .badge { border: 1px solid #999 !important; border-radius: 4px;
     padding: 1px 5px; margin: 2px; display: inline-block; font-size: 9pt; }
   .json-block { border: 1px solid #ccc; padding: 6pt; font-size: 9pt; }
+  .code-line .ln { color: #999 !important; }
+  .vol-card { break-inside: avoid; page-break-inside: avoid; border: 1px solid #ccc !important;
+    border-radius: 6px; padding: 8pt !important; margin-bottom: 6pt; }
   .footer { border-top: 1px solid #ccc; margin-top: 10pt; font-size: 8pt; }
   @page { margin: 12mm; }
 }
+
+/* ============ volunteering / community sub-page ============ */
+.vp-hero { padding-top: 7.5rem; }
+.vp-title {
+  font-family: var(--sans); font-weight: 800; line-height: 1.05;
+  font-size: clamp(2.1rem, 6vw, 3.4rem); letter-spacing: -0.02em;
+  color: #f1f5fb; margin: 0.4rem 0 1.3rem;
+}
+.vp-stats { margin-top: 2rem; }
+.vol-section { padding-top: 1rem; }
+.vol-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.3rem; }
+.vol-card {
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px;
+  padding: 1.5rem; position: relative; overflow: hidden;
+  transition: transform 0.25s, border-color 0.25s;
+}
+.vol-card::before {
+  content: ""; position: absolute; top: 0; left: 0; width: 3px; height: 100%;
+  background: var(--grad); opacity: 0; transition: opacity 0.25s;
+}
+.vol-card:hover { transform: translateY(-4px); border-color: var(--accent); }
+.vol-card:hover::before { opacity: 1; }
+.vol-head { display: flex; gap: 0.9rem; align-items: flex-start; margin-bottom: 0.8rem; }
+.vol-icon { flex-shrink: 0; }
+.vol-icon .ico { width: 26px; height: 26px; stroke: var(--accent); }
+.vol-card:nth-child(2n) .vol-icon .ico { stroke: var(--accent2); }
+.vol-card:nth-child(3n) .vol-icon .ico { stroke: var(--accent3); }
+.vol-role { color: #f1f5fb; font-size: 1.05rem; line-height: 1.3; margin-bottom: 0.15rem; }
+.vol-org { color: var(--accent2); font-size: 0.86rem; font-weight: 600; }
+.vol-meta { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; margin: 0.4rem 0 0.85rem; }
+.vol-date {
+  font-family: var(--mono); font-size: 0.72rem; color: var(--text-dim);
+  border: 1px solid var(--border); border-radius: 999px; padding: 0.12rem 0.6rem;
+}
+.vol-cause {
+  font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.02em;
+  color: var(--accent3); background: rgba(167, 139, 250, 0.1);
+  border: 1px solid rgba(167, 139, 250, 0.25); border-radius: 999px; padding: 0.12rem 0.6rem;
+}
+.vol-badge {
+  font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.05em; text-transform: uppercase;
+  color: var(--accent); background: var(--accent-soft);
+  border: 1px solid rgba(34, 229, 140, 0.3); border-radius: 999px; padding: 0.12rem 0.55rem;
+  display: inline-flex; align-items: center; gap: 0.35rem;
+}
+.vol-badge::before {
+  content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--accent);
+  box-shadow: 0 0 8px var(--accent);
+}
+.vol-card p { color: var(--text-dim); font-size: 0.92rem; }
+.vol-card p strong { color: var(--text); }
+.vol-cta-section { text-align: center; }
+@media (max-width: 600px) { .vp-hero { padding-top: 6rem; } }
+
+/* community -> volunteering CTA (on home page) */
+.community-cta { text-align: center; margin-top: 2.4rem; }
+.community-cta-note { color: var(--text-dim); font-size: 0.85rem; margin-top: 0.9rem; }
