@@ -5,10 +5,11 @@
   var roles = [
     "Digital Forensics & Incident Response",
     "SOC Operations & Detection Engineering",
+    "Threat Hunting | MITRE ATT&CK",
+    "OT / IoT Security | ICS & SCADA Defense",
     "Penetration Testing & VAPT",
     "Cloud Security | AWS · Azure · OCI",
     "AI Security | LLM Threat Modeling",
-    "Threat Hunting | MITRE ATT&CK",
     "Malware Analysis & Reverse Engineering",
     "Cybercrime Investigator | Cyber Forensic Expert"
   ];
