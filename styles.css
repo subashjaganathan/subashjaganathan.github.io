@@ -325,7 +325,7 @@ a:hover { text-decoration: underline; }
   text-align: right; padding-right: 0.9rem; margin-right: 0.9rem;
   border-right: 1px solid var(--border);
   font-family: var(--mono); font-size: 0.78rem; line-height: 1.85;
-  color: #3d4d68; user-select: none;
+  color: #7686a2; user-select: none;
 }
 .code-line .ln::before { content: counter(ln); }
 .code-line:hover .ln { color: var(--accent2); }
@@ -335,7 +335,7 @@ a:hover { text-decoration: underline; }
 }
 .j-key { color: var(--accent2); } .j-val { color: var(--amber); }
 .j-num { color: var(--accent); } .j-green { color: var(--accent); }
-.j-punc { color: #56688a; }
+.j-punc { color: #7789a5; }
 /* editor status bar */
 .code-status {
   display: flex; align-items: center; justify-content: space-between;
