@@ -625,6 +625,17 @@ a:hover { text-decoration: underline; }
 }
 .fw-title { font-family: var(--mono); font-size: 0.92rem; color: #f1f5fb; margin-bottom: 0.9rem; }
 .fw-tags span:hover { color: var(--accent3); border-color: var(--accent3); background: rgba(167,139,250,0.1); }
+.fw-groups { display: flex; flex-direction: column; gap: 1.05rem; }
+.fw-group { display: flex; flex-direction: column; gap: 0.55rem; }
+.fw-label {
+  font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.09em;
+  text-transform: uppercase; color: var(--accent2);
+}
+.fw-group + .fw-group { border-top: 1px dashed var(--border); padding-top: 1.05rem; }
+@media (min-width: 760px) {
+  .fw-group { flex-direction: row; align-items: baseline; gap: 1.2rem; }
+  .fw-label { flex: 0 0 180px; text-align: right; }
+}
 
 /* ============ keyboard focus visibility ============ */
 a:focus-visible, button:focus-visible, .proj-card:focus-visible, .contact-link:focus-visible {
