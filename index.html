@@ -49,7 +49,7 @@
   <link rel="preload" href="assets/fonts/Sora-700.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="assets/fonts/JetBrainsMono-400.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="assets/fonts/fonts.css" />
-  <link rel="stylesheet" href="styles.css?v=3" />
+  <link rel="stylesheet" href="styles.css?v=4" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2322e58c' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M12 2l8 4v6c0 5.25-3.5 9.4-8 10-4.5-.6-8-4.75-8-10V6z'/></svg>" />
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
   <link rel="manifest" href="/site.webmanifest" />
@@ -163,7 +163,7 @@
             <div class="code-line"><span class="ln"></span><span class="lc">  <span class="j-key">"name"</span><span class="j-punc">:</span> <span class="j-val">"Subash Jaganathan"</span><span class="j-punc">,</span></span></div>
             <div class="code-line"><span class="ln"></span><span class="lc">  <span class="j-key">"role"</span><span class="j-punc">:</span> <span class="j-val">"Senior Associate - Cyber &amp; Digital Risk"</span><span class="j-punc">,</span></span></div>
             <div class="code-line"><span class="ln"></span><span class="lc">  <span class="j-key">"company"</span><span class="j-punc">:</span> <span class="j-val">"PwC India"</span><span class="j-punc">,</span></span></div>
-            <div class="code-line"><span class="ln"></span><span class="lc">  <span class="j-key">"experience"</span><span class="j-punc">:</span> <span class="j-num">6</span><span class="j-punc">,</span></span></div>
+            <div class="code-line"><span class="ln"></span><span class="lc">  <span class="j-key">"experience"</span><span class="j-punc">:</span> <span class="j-val">"6+ yrs"</span><span class="j-punc">,</span></span></div>
             <div class="code-line"><span class="ln"></span><span class="lc">  <span class="j-key">"focus"</span><span class="j-punc">: [</span></span></div>
             <div class="code-line"><span class="ln"></span><span class="lc">    <span class="j-val">"DFIR"</span><span class="j-punc">,</span> <span class="j-val">"SOC"</span><span class="j-punc">,</span></span></div>
             <div class="code-line"><span class="ln"></span><span class="lc">    <span class="j-val">"Penetration Testing"</span><span class="j-punc">,</span></span></div>
@@ -256,10 +256,40 @@
       </div>
 
       <div class="frameworks reveal">
-        <h3 class="fw-title">Frameworks &amp; Compliance</h3>
-        <div class="tags fw-tags">
-          <span>MITRE ATT&amp;CK</span><span>NIST CSF 2.0</span><span>NIST SP 800-53</span><span>ISO/IEC 27001:2022</span><span>ISO 22301 (BCM)</span><span>OWASP</span><span>Zero Trust</span>
-          <span>SSDLC</span><span>Cyber Kill Chain</span><span>DPDP Act</span><span>GDPR</span><span>SEBI</span><span>RBI</span><span>PCI DSS</span>
+        <h3 class="fw-title">Frameworks, Standards &amp; Policies</h3>
+        <div class="fw-groups">
+          <div class="fw-group">
+            <span class="fw-label">Detection &amp; Threat Modeling</span>
+            <div class="tags fw-tags"><span>MITRE ATT&amp;CK</span><span>MITRE D3FEND</span><span>Cyber Kill Chain</span><span>Pyramid of Pain</span><span>Diamond Model</span></div>
+          </div>
+          <div class="fw-group">
+            <span class="fw-label">DFIR &amp; Incident Response</span>
+            <div class="tags fw-tags"><span>NIST SP 800-61</span><span>NIST SP 800-86</span><span>SANS PICERL</span><span>ISO/IEC 27035</span><span>SWGDE</span><span>ACPO Guidelines</span></div>
+          </div>
+          <div class="fw-group">
+            <span class="fw-label">Risk Management</span>
+            <div class="tags fw-tags"><span>NIST RMF (800-37)</span><span>NIST SP 800-30</span><span>ISO/IEC 27005</span><span>FAIR</span><span>OCTAVE</span></div>
+          </div>
+          <div class="fw-group">
+            <span class="fw-label">Cloud Security</span>
+            <div class="tags fw-tags"><span>CSA CCM</span><span>CSA STAR</span><span>ISO/IEC 27017</span><span>ISO/IEC 27018</span><span>CIS Benchmarks</span><span>AWS Well-Architected</span><span>NIST SP 800-144</span></div>
+          </div>
+          <div class="fw-group">
+            <span class="fw-label">AI Security</span>
+            <div class="tags fw-tags"><span>NIST AI RMF</span><span>ISO/IEC 42001</span><span>OWASP Top 10 for LLM</span><span>MITRE ATLAS</span><span>Google SAIF</span><span>EU AI Act</span></div>
+          </div>
+          <div class="fw-group">
+            <span class="fw-label">OT / ICS Security</span>
+            <div class="tags fw-tags"><span>IEC 62443</span><span>NIST SP 800-82</span><span>NERC CIP</span><span>Purdue Model</span><span>ATT&amp;CK for ICS</span></div>
+          </div>
+          <div class="fw-group">
+            <span class="fw-label">IT Governance &amp; Compliance</span>
+            <div class="tags fw-tags"><span>ISO/IEC 27001:2022</span><span>NIST CSF 2.0</span><span>NIST SP 800-53</span><span>CIS Controls v8</span><span>SOC 2</span><span>COBIT</span><span>ITIL 4</span><span>ISO 22301 (BCM)</span><span>Zero Trust</span><span>SSDLC</span><span>OWASP ASVS</span></div>
+          </div>
+          <div class="fw-group">
+            <span class="fw-label">Privacy &amp; Regulatory</span>
+            <div class="tags fw-tags"><span>DPDP Act</span><span>GDPR</span><span>PCI DSS</span><span>HIPAA</span><span>RBI</span><span>SEBI</span></div>
+          </div>
         </div>
       </div>
     </section>
