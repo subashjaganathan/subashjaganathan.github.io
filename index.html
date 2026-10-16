@@ -9,6 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#060a12" />
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; font-src 'self'; script-src 'self'; connect-src 'self'; object-src 'none'; frame-src 'none'" />
+  <script src="boot-gate.js?v=1"></script>
   <title>Subash Jaganathan | Senior Associate - Cyber &amp; Digital Risk | DFIR · SOC · Threat Hunting · OT/IoT Security</title>
   <meta name="description" content="Subash Jaganathan - Senior Associate, Cyber &amp; Digital Risk (Advisory) at PwC, specializing in DFIR, SOC operations, threat hunting and OT/IoT security, backed by penetration testing (VAPT), cloud security and AI security. Incident response, malware analysis, threat intelligence and security programs aligned to ISO 27001, NIST CSF 2.0 and 800-53. 6+ years across banking, government and critical-infrastructure sectors." />
   <link rel="canonical" href="https://subashjaganathan.github.io/" />
@@ -49,15 +50,30 @@
   <link rel="preload" href="assets/fonts/Sora-700.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="assets/fonts/JetBrainsMono-400.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="assets/fonts/fonts.css" />
-  <link rel="stylesheet" href="styles.css?v=4" />
+  <link rel="stylesheet" href="styles.css?v=10" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2322e58c' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M12 2l8 4v6c0 5.25-3.5 9.4-8 10-4.5-.6-8-4.75-8-10V6z'/></svg>" />
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
   <link rel="manifest" href="/site.webmanifest" />
 </head>
 <body>
   <a href="#home" class="skip-link">Skip to content</a>
+
+  <!-- cinematic boot intro: shown only when boot-gate.js sets html.booting -->
+  <div class="boot" id="boot">
+    <div class="boot-panel top"></div>
+    <div class="boot-panel bottom"></div>
+    <div class="boot-seam"></div>
+    <div class="boot-inner" aria-hidden="true">
+      <div class="boot-log" id="bootLog"></div>
+      <p class="boot-name">SUBASH <span class="accent">JAGANATHAN</span></p>
+      <p class="boot-role">DFIR · SOC · THREAT HUNTING · OT/IoT SECURITY</p>
+    </div>
+    <button class="boot-skip" id="bootSkip" type="button">skip intro &middot; any key</button>
+  </div>
+
   <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
   <canvas id="matrix-bg" aria-hidden="true"></canvas>
+  <canvas id="cinema-bg" aria-hidden="true"></canvas>
   <div class="scan-line" aria-hidden="true"></div>
 
   <!-- ============ NAV ============ -->
@@ -104,6 +120,12 @@
         <p class="t-dim">[OK] Containment executed. Dwell time: <span class="t-amber">minimized</span></p>
         <p><span class="t-green">$</span> <span class="blink">▋</span></p>
       </div>
+    </div>
+    <div class="hero-hud" aria-hidden="true">
+      <span>11.0168&deg;N 76.9558&deg;E</span>
+      <span>intercepts <b id="hudHits">0000</b></span>
+      <span><b id="hudFps">60</b> fps</span>
+      <span><b id="hudCalls">0</b> draw calls</span>
     </div>
     <a href="#about" class="scroll-hint" aria-label="Scroll down"><span></span></a>
   </header>
@@ -194,6 +216,40 @@
           </div>
           </aside>
         </div>
+      </div>
+    </section>
+
+    <!-- ============ LIVE THREAT MAP (threatmap.js, data: assets/data/threatmap.json) ============ -->
+    <section class="section tm-section" id="threat-map">
+      <div class="tm-head reveal">
+        <p class="tm-kicker"><span class="tm-live"></span>live threat intel &middot; last 48 hours</p>
+        <h2 class="tm-title">Global Command-and-Control Activity</h2>
+        <p class="tm-sub">Every pulse is a real C2 server reported to abuse.ch ThreatFox in the last 48 hours, placed at its
+          hosting country and replayed in time order, colour-coded by malware family. The data refreshes every six hours.</p>
+      </div>
+      <div class="tm-grid reveal">
+        <div class="tm-stage" id="tmStage">
+          <canvas id="tmCanvas" role="img" aria-label="World map of command-and-control servers reported in the last 48 hours"></canvas>
+          <div class="tm-hud tm-tl">c2 sightings &middot; threatfox</div>
+          <div class="tm-hud tm-tr" id="tmClock">loading feed</div>
+          <div class="tm-hud tm-br" id="tmUpdated"></div>
+          <p class="tm-offline-msg">Live feed unavailable right now.</p>
+        </div>
+        <aside class="tm-side">
+          <div class="tm-col tm-stats">
+            <div><strong id="tmC2">0</strong><span>C2 servers</span></div>
+            <div><strong id="tmCountries">0</strong><span>countries</span></div>
+            <div><strong id="tmFamilies">0</strong><span>families</span></div>
+          </div>
+          <div class="tm-col">
+            <h3 class="tm-h">Top malware families</h3>
+            <ul class="tm-legend" id="tmLegend"></ul>
+          </div>
+          <div class="tm-col">
+            <h3 class="tm-h">Live feed</h3>
+            <ul class="tm-feed" id="tmFeed"></ul>
+          </div>
+        </aside>
       </div>
     </section>
 
@@ -325,6 +381,70 @@
         </a>
       </div>
       <p class="proj-more reveal">More on <a href="https://github.com/subashjaganathan" target="_blank" rel="noopener">github.com/subashjaganathan ↗</a></p>
+    </section>
+
+    <!-- ============ FREE RESOURCES: SECURITY CHECKLIST + PRIVACY ALTERNATIVES ============ -->
+    <section class="section spotlight-section" id="resources">
+      <div class="spotlight reveal" id="checklist">
+        <div class="spot-copy">
+          <p class="spot-kicker">// free resource &middot; security</p>
+          <h2 class="spot-title">Personal Cyber Hygiene Checklist</h2>
+          <p class="spot-desc">Plain-English security and privacy checks for everyday life, from passwords and devices to backups,
+            finances and AI chatbots. Each check is rated Essential, Optional or Advanced, and your progress is saved only in
+            your browser: no account, no backend, no tracking.</p>
+          <div class="spot-stats">
+            <div><strong>278</strong><span>checks</span></div>
+            <div><strong>15</strong><span>areas</span></div>
+            <div><strong>113</strong><span>essential</span></div>
+          </div>
+          <div class="spot-actions">
+            <a class="btn btn-primary" href="https://subashjaganathan.github.io/personal-cyber-hygiene-checklist/" target="_blank" rel="noopener">Open the checklist &#8599;</a>
+            <a class="btn btn-ghost" href="https://github.com/subashjaganathan/personal-cyber-hygiene-checklist" target="_blank" rel="noopener">View source</a>
+          </div>
+        </div>
+        <div class="spot-panel" aria-hidden="true">
+          <div class="spot-panel-head"><span>checklist.yml</span><span>progress: local</span></div>
+          <ul class="spot-list">
+            <li class="done">Use a Strong Password<span class="spot-area">Auth</span></li>
+            <li class="done">Don't Reuse Passwords<span class="spot-area">Auth</span></li>
+            <li class="done">Encrypt your Device<span class="spot-area">Devices</span></li>
+            <li>Follow the 3-2-1 Rule<span class="spot-area">Backup</span></li>
+            <li>Never Share Secrets with AI Chatbots<span class="spot-area">AI &amp; Privacy</span></li>
+          </ul>
+          <div class="spot-meter"><span></span></div>
+          <p class="spot-note">3 of 5 shown complete &middot; stored in your browser only</p>
+        </div>
+      </div>
+
+      <div class="spotlight spotlight-alt reveal" id="privacy">
+        <div class="spot-copy">
+          <p class="spot-kicker">// free resource &middot; privacy</p>
+          <h2 class="spot-title">Privacy Alternatives</h2>
+          <p class="spot-desc">A searchable directory of privacy-respecting tools, organised by the mainstream product each one
+            replaces: look up what you already use and see what to switch to. Filter by open source, independent audit or
+            anonymous payment, save a shortlist, and share direct links.</p>
+          <div class="spot-stats">
+            <div><strong>389</strong><span>tools</span></div>
+            <div><strong>13</strong><span>categories</span></div>
+            <div><strong>105</strong><span>open source</span></div>
+          </div>
+          <div class="spot-actions">
+            <a class="btn btn-primary" href="https://subashjaganathan.github.io/privacy-alternatives/" target="_blank" rel="noopener">Find an alternative &#8599;</a>
+            <a class="btn btn-ghost" href="https://github.com/subashjaganathan/privacy-alternatives" target="_blank" rel="noopener">View source</a>
+          </div>
+        </div>
+        <div class="spot-panel" aria-hidden="true">
+          <div class="spot-panel-head"><span>swap-outs</span><span>no tracking</span></div>
+          <ul class="swap-list">
+            <li><span class="swap-old">LastPass</span><svg class="swap-arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></svg><span class="swap-new">Bitwarden</span><span class="spot-area">Passwords</span></li>
+            <li><span class="swap-old">Gmail</span><svg class="swap-arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></svg><span class="swap-new">ProtonMail</span><span class="spot-area">Email</span></li>
+            <li><span class="swap-old">WhatsApp</span><svg class="swap-arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></svg><span class="swap-new">Signal</span><span class="spot-area">Messaging</span></li>
+            <li><span class="swap-old">Chrome</span><svg class="swap-arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></svg><span class="swap-new">LibreWolf</span><span class="spot-area">Browser</span></li>
+            <li><span class="swap-old">Google</span><svg class="swap-arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></svg><span class="swap-new">DuckDuckGo</span><span class="spot-area">Search</span></li>
+          </ul>
+          <p class="spot-note">Filters: open source &middot; audited &middot; mobile app &middot; anonymous payment</p>
+        </div>
+      </div>
     </section>
 
     <!-- ============ EXPERIENCE ============ -->
@@ -620,6 +740,7 @@
     <p class="footer-sub">No threats were left unhunted in the making of this site.</p>
   </footer>
 
-  <script src="script.js?v=4"></script>
+  <script src="script.js?v=5"></script>
+  <script type="module" src="cinema.js?v=7"></script>
 </body>
 </html>

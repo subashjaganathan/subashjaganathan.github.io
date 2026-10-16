@@ -101,6 +101,7 @@
   }
 
   function loop() {
+    if (document.documentElement.classList.contains("webgl")) return; // cinema.js globe took over
     if (!W || !H || nodes.length === 0) init(); // self-heal if it started before layout
     if ((W && H) && !document.hidden) draw();
     requestAnimationFrame(loop);
