@@ -336,6 +336,11 @@ a:hover { text-decoration: underline; }
 .j-key { color: var(--accent2); } .j-val { color: var(--amber); }
 .j-num { color: var(--accent); } .j-green { color: var(--accent); }
 .j-punc { color: #7789a5; }
+/* phones: smaller code + slimmer gutter so the packed sector lines don't wrap */
+@media (max-width: 480px) {
+  .code-line .ln, .code-line .lc { font-size: 0.66rem; }
+  .code-line .ln { width: 1.9rem; padding-right: 0.55rem; margin-right: 0.55rem; }
+}
 /* editor status bar */
 .code-status {
   display: flex; align-items: center; justify-content: space-between;
