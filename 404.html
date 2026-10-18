@@ -5,7 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>404 | Evidence Not Found</title>
   <meta name="robots" content="noindex" />
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="/assets/fonts/fonts.css" rel="stylesheet" />
+  <script>
+    // The checklist moved from /personal-cyber-hygiene-checklist/ to /zero-to-secure/; keep old deep links working.
+    (function () {
+      var old = "/personal-cyber-hygiene-checklist/";
+      if (location.pathname.indexOf(old) === 0) {
+        location.replace("/zero-to-secure/" + location.pathname.slice(old.length) + location.search + location.hash);
+      }
+    })();
+  </script>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
