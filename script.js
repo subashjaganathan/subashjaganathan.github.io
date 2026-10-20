@@ -103,6 +103,79 @@
   sections.forEach(function (s) { obs.observe(s); });
 })();
 
+/* ---------- Scroll entrance: fade content up as it enters the viewport ----------
+   Only elements that start below the fold are hidden, so nothing on screen at
+   load ever flickers; siblings in a grid get a short stagger. */
+(function () {
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches || !("IntersectionObserver" in window)) return;
+  var sel = ".section-head, .about-text, .facts, .skill-card, .frameworks, .proj-card, .spotlight, .tl-item, " +
+            ".stats-grid, .impact-card, .community-cta, .cert-group, .edu-card, .contact-box, .vol-card";
+  var fold = window.innerHeight;
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      io.unobserve(e.target);
+      e.target.classList.add("in");
+      e.target.classList.remove("pre");
+    });
+  }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
+  document.querySelectorAll(sel).forEach(function (el) {
+    if (el.getBoundingClientRect().top < fold) return;
+    var i = Array.prototype.indexOf.call(el.parentNode.children, el);
+    el.style.transitionDelay = Math.min(i % 4, 3) * 70 + "ms";
+    el.classList.add("pre");
+    io.observe(el);
+  });
+})();
+
+/* ---------- Easter egg: Evidence Locker ----------
+   Opens from the lock in the footer, the Konami code, typing "hunt", or five quick
+   clicks on the SJ mark. The game itself (egg.js) only loads when first opened. */
+(function () {
+  var loading = false;
+  function openEgg() {
+    if (window.SJEgg) { window.SJEgg.open(); return; }
+    if (loading) return;
+    loading = true;
+    var s = document.createElement("script");
+    s.src = "egg.js?v=2";
+    s.onload = function () { loading = false; if (window.SJEgg) window.SJEgg.open(); };
+    s.onerror = function () { loading = false; };
+    document.body.appendChild(s);
+  }
+
+  var trigger = document.getElementById("eggTrigger");
+  if (trigger) trigger.addEventListener("click", openEgg);
+
+  var mark = document.querySelector(".nav-mark");
+  var clicks = [];
+  if (mark) mark.addEventListener("click", function (e) {
+    var now = Date.now();
+    clicks = clicks.filter(function (t) { return now - t < 2000; });
+    clicks.push(now);
+    if (clicks.length >= 5) { e.preventDefault(); clicks = []; openEgg(); }
+  });
+
+  var seq = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a"];
+  var pos = 0, typed = "";
+  document.addEventListener("keydown", function (e) {
+    if (document.documentElement.classList.contains("egg-open")) return;
+    if (e.target && /^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName)) return;
+    var k = e.key.length === 1 ? e.key.toLowerCase() : e.key;
+    pos = k === seq[pos] ? pos + 1 : (k === seq[0] ? 1 : 0);
+    if (pos === seq.length) { pos = 0; openEgg(); return; }
+    if (k.length === 1) {
+      typed = (typed + k).slice(-4);
+      if (typed === "hunt") { typed = ""; openEgg(); }
+    }
+  });
+
+  if (window.console && console.log) {
+    console.log("%cEvidence Locker", "font-weight:700;font-size:14px;color:#0f62fe",
+      "\nThere is a locked case file on this site. Type \"hunt\" anywhere on the page to try it.");
+  }
+})();
+
 /* ---------- Footer year ---------- */
 (function () {
   var y = document.getElementById("year");
