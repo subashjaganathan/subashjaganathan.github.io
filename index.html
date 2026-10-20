@@ -7,9 +7,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#060a12" />
+  <meta name="theme-color" content="#ffffff" />
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; font-src 'self'; script-src 'self'; connect-src 'self'; object-src 'none'; frame-src 'none'" />
-  <script src="boot-gate.js?v=1"></script>
   <title>Subash Jaganathan | Senior Associate - Cyber &amp; Digital Risk | DFIR · SOC · Threat Hunting · OT/IoT Security</title>
   <meta name="description" content="Subash Jaganathan - Senior Associate, Cyber &amp; Digital Risk (Advisory) at PwC, specializing in DFIR, SOC operations, threat hunting and OT/IoT security, backed by penetration testing (VAPT), cloud security and AI security. Incident response, malware analysis, threat intelligence and security programs aligned to ISO 27001, NIST CSF 2.0 and 800-53. 6+ years across banking, government and critical-infrastructure sectors." />
   <link rel="canonical" href="https://subashjaganathan.github.io/" />
@@ -47,95 +46,61 @@
     "knowsAbout": ["Digital Forensics", "Incident Response", "SOC Operations", "Threat Hunting", "OT Security", "ICS Security", "IoT Security", "Penetration Testing", "Cloud Security", "AI Security", "Malware Analysis", "Threat Intelligence", "Application Security", "Cloud Forensics", "Cyber Advisory", "Governance Risk and Compliance", "ISO/IEC 27001", "NIST Cybersecurity Framework", "NIST SP 800-53", "Risk Assessment", "Security Auditing"]
   }
   </script>
-  <link rel="preload" href="assets/fonts/Sora-700.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="assets/fonts/JetBrainsMono-400.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="assets/fonts/Inter-var.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="assets/fonts/fonts.css" />
-  <link rel="stylesheet" href="styles.css?v=11" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2322e58c' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M12 2l8 4v6c0 5.25-3.5 9.4-8 10-4.5-.6-8-4.75-8-10V6z'/></svg>" />
+  <link rel="stylesheet" href="styles.css?v=12" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230f62fe' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M12 2l8 4v6c0 5.25-3.5 9.4-8 10-4.5-.6-8-4.75-8-10V6z'/></svg>" />
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
   <link rel="manifest" href="/site.webmanifest" />
 </head>
 <body>
-  <a href="#home" class="skip-link">Skip to content</a>
+  <a href="#main" class="skip-link">Skip to content</a>
 
-  <!-- cinematic boot intro: shown only when boot-gate.js sets html.booting -->
-  <div class="boot" id="boot">
-    <div class="boot-panel top"></div>
-    <div class="boot-panel bottom"></div>
-    <div class="boot-seam"></div>
-    <div class="boot-inner" aria-hidden="true">
-      <div class="boot-log" id="bootLog"></div>
-      <p class="boot-name">SUBASH <span class="accent">JAGANATHAN</span></p>
-      <p class="boot-role">DFIR · SOC · THREAT HUNTING · OT/IoT SECURITY</p>
-    </div>
-    <button class="boot-skip" id="bootSkip" type="button">skip intro &middot; any key</button>
-  </div>
-
-  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
-  <canvas id="matrix-bg" aria-hidden="true"></canvas>
-  <canvas id="cinema-bg" aria-hidden="true"></canvas>
-  <div class="scan-line" aria-hidden="true"></div>
 
   <!-- ============ NAV ============ -->
   <nav class="nav" id="nav">
     <div class="nav-inner">
-      <a href="#home" class="nav-logo"><span class="logo-bracket">[</span>SJ<span class="logo-cursor">_</span><span class="logo-bracket">]</span></a>
+      <a href="#home" class="nav-logo"><span class="nav-mark" aria-hidden="true">SJ</span>Subash Jaganathan</a>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-controls="navLinks" aria-expanded="false"><span></span><span></span><span></span></button>
       {% include nav-links.html %}
     </div>
   </nav>
 
+
   <!-- ============ HERO ============ -->
   <header class="hero" id="home">
-    <div class="hero-content">
-      <p class="hero-pre reveal">root@dfir:~$ whoami</p>
-      <h1 class="hero-name reveal">SUBASH<br /><span class="accent">JAGANATHAN</span></h1>
-      <div class="hero-type reveal">
-        <span class="prompt">&gt;</span> <span id="typewriter"></span><span class="type-cursor">▋</span>
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow">Cyber &amp; Digital Risk &middot; PwC India</p>
+        <h1 class="hero-name">Subash Jaganathan</h1>
+        <p class="hero-role">Senior Associate &middot; DFIR, SOC, Threat Hunting &amp; OT/IoT Security</p>
+        <p class="hero-sub">I lead incident response and forensic investigations across Windows, Linux, mobile, cloud and OT/ICS,
+          hunt advanced threats, test applications and cloud environments, and advise on security programs aligned to
+          ISO 27001, NIST CSF 2.0 and NIST SP 800-53, across banking, government and critical-infrastructure clients.</p>
+        <div class="hero-actions">
+          <a href="#experience" class="btn btn-primary">View experience</a>
+          <a href="#contact" class="btn btn-ghost js-email" data-subject="Resume request" data-body="Hi Subash, I would like to request your latest resume.\n\nName:\nCompany / Organization:\nRole:">Request resume</a>
+          <a href="https://github.com/subashjaganathan" target="_blank" rel="noopener" class="btn btn-ghost">GitHub &#8599;</a>
+        </div>
+        <ul class="hero-facts">
+          <li><strong>6+</strong><span>years in security</span></li>
+          <li><strong>20+</strong><span>organisations recovered</span></li>
+          <li><strong>50,000+</strong><span>professionals trained</span></li>
+        </ul>
       </div>
-      <p class="hero-sub reveal">Cyber security professional specializing in <strong>Digital Forensics &amp; Incident Response (DFIR), SOC operations,
-        Threat Hunting</strong> and <strong>OT / IoT Security</strong>, backed by <strong>Penetration Testing (VAPT), Cloud and AI Security</strong>. I run end-to-end IR engagements and forensic investigations across
-        <strong>Windows, Linux, mobile, cloud and OT/ICS</strong>, hunt advanced threats (<strong>APTs, ransomware, insider attacks</strong>),
-        pentest <strong>applications and cloud environments</strong>, and advise on security programs aligned to <strong>ISO 27001, NIST CSF 2.0 &amp; 800-53</strong>. <strong>6+ years</strong> across
-        <strong>DFIR, SOC, threat hunting, OT/IoT security, penetration testing, cloud &amp; AI security and GRC</strong> in banking, government and enterprise environments.</p>
-      <div class="hero-actions reveal">
-        <a href="#experience" class="btn btn-primary">View Track Record</a>
-        <a href="#contact" class="btn btn-ghost js-email" data-subject="Resume request" data-body="Hi Subash, I would like to request your latest resume.\n\nName:\nCompany / Organization:\nRole:">Request Resume &#8599;</a>
-        <a href="https://github.com/subashjaganathan" target="_blank" rel="noopener" class="btn btn-ghost">github/subashjaganathan ↗</a>
-      </div>
-      <div class="hero-badges reveal">
-        <span class="badge">DFIR</span><span class="badge">SOC</span><span class="badge">Threat Hunting</span><span class="badge">OT / IoT Security</span>
-        <span class="badge">Penetration Testing</span><span class="badge">Cloud Security</span><span class="badge">AI Security</span><span class="badge">Malware RE</span><span class="badge">Threat Intel</span><span class="badge">Cyber Advisory</span><span class="badge">GRC</span><span class="badge">Trainer &amp; Speaker</span>
-      </div>
+      <figure class="hero-photo">
+        <img src="assets/subash.jpg" width="1040" height="662" alt="Subash Jaganathan speaking on DFIR-led ransomware investigations" />
+        <figcaption><span>Speaking on DFIR-led ransomware investigations</span><span>Coimbatore, India</span></figcaption>
+      </figure>
     </div>
-    <div class="hero-terminal reveal">
-      <div class="term-bar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="term-title">incident_response.sh : bash</span></div>
-      <div class="term-body" id="termBody">
-        <p><span class="t-green">$</span> ./triage --target compromised-host</p>
-        <p class="t-dim">[+] Acquiring memory image............ <span class="t-green">DONE</span></p>
-        <p class="t-dim">[+] Parsing $MFT &amp; event logs......... <span class="t-green">DONE</span></p>
-        <p class="t-dim">[+] Hunting persistence mechanisms.... <span class="t-green">DONE</span></p>
-        <p class="t-dim">[+] Mapping TTPs to MITRE ATT&amp;CK....... <span class="t-green">DONE</span></p>
-        <p class="t-dim">[!] Threat actor identified: <span class="t-red">APT-XX</span></p>
-        <p class="t-dim">[OK] Containment executed. Dwell time: <span class="t-amber">minimized</span></p>
-        <p><span class="t-green">$</span> <span class="blink">▋</span></p>
-      </div>
-    </div>
-    <div class="hero-hud" aria-hidden="true">
-      <span>11.0168&deg;N 76.9558&deg;E</span>
-      <span>intercepts <b id="hudHits">0000</b></span>
-      <span><b id="hudFps">60</b> fps</span>
-      <span><b id="hudCalls">0</b> draw calls</span>
-    </div>
-    <a href="#about" class="scroll-hint" aria-label="Scroll down"><span></span></a>
   </header>
 
-  <main>
+  <main id="main">
     <!-- ============ ABOUT ============ -->
     <section class="section" id="about">
-      <h2 class="section-title reveal"><span class="sec-num">01.</span> cat about.md</h2>
+      <div class="section-head"><p class="eyebrow">About</p><h2 class="section-title">Profile</h2></div>
       <div class="about-grid">
-        <div class="about-text reveal">
+        <div class="about-text">
           <p>Results-driven cybersecurity professional with <strong>6+ years</strong> of hands-on experience specializing in
             <strong>Digital Forensics &amp; Incident Response (DFIR)</strong>, <strong>Security Operations (SOC)</strong>,
             <strong>Threat Hunting</strong> and <strong>OT / IoT Security</strong>, backed by <strong>Penetration Testing (VAPT)</strong>,
@@ -157,103 +122,25 @@
               capability-building programs and hands-on DFIR training, strengthening cyber readiness across enterprise and law enforcement communities.</p>
           </div>
         </div>
-        <div class="about-side">
-          <figure class="about-photo reveal">
-            <div class="photo-frame">
-              <img class="photo-img" src="assets/subash.jpg" width="1040" height="662" loading="lazy" alt="Subash Jaganathan speaking on DFIR-led ransomware investigations - Senior Associate, Cyber & Digital Risk, PwC" />
-              <span class="photo-scan" aria-hidden="true"></span>
-              <span class="photo-corner tl" aria-hidden="true"></span>
-              <span class="photo-corner tr" aria-hidden="true"></span>
-              <span class="photo-corner bl" aria-hidden="true"></span>
-              <span class="photo-corner br" aria-hidden="true"></span>
-              <span class="photo-status"><i></i> Coimbatore, IN</span>
-            </div>
-            <figcaption class="photo-cap"><span class="accent">&gt;</span> Subash Jaganathan <span class="photo-cap-role">// DFIR &amp; SOC</span></figcaption>
-          </figure>
-          <aside class="about-card reveal">
-          <div class="code-chrome">
-            <span class="code-dots"><i></i><i></i><i></i></span>
-            <span class="code-tab">
-              <svg aria-hidden="true" class="ico" viewBox="0 0 24 24"><path d="M8 3H7a2 2 0 0 0-2 2v4a2 2 0 0 1-2 2 2 2 0 0 1 2 2v4a2 2 0 0 0 2 2h1"/><path d="M16 3h1a2 2 0 0 1 2 2v4a2 2 0 0 0 2 2 2 2 0 0 0-2 2v4a2 2 0 0 1-2 2h-1"/></svg>
-              profile.json
-              <span class="code-mod" title="unsaved changes"></span>
-            </span>
-            <span class="code-lang">JSON</span>
-          </div>
-          <div class="code-body">
-            <div class="code-line"><span class="ln"></span><span class="lc"><span class="j-punc">{</span></span></div>
-            <div class="code-line"><span class="ln"></span><span class="lc">  <span class="j-key">"name"</span><span class="j-punc">:</span> <span class="j-val">"Subash Jaganathan"</span><span class="j-punc">,</span></span></div>
-            <div class="code-line"><span class="ln"></span><span class="lc">  <span class="j-key">"role"</span><span class="j-punc">:</span> <span class="j-val">"Senior Associate - Cyber &amp; Digital Risk"</span><span class="j-punc">,</span></span></div>
-            <div class="code-line"><span class="ln"></span><span class="lc">  <span class="j-key">"company"</span><span class="j-punc">:</span> <span class="j-val">"PwC India"</span><span class="j-punc">,</span></span></div>
-            <div class="code-line"><span class="ln"></span><span class="lc">  <span class="j-key">"experience"</span><span class="j-punc">:</span> <span class="j-val">"6+ yrs"</span><span class="j-punc">,</span></span></div>
-            <div class="code-line"><span class="ln"></span><span class="lc">  <span class="j-key">"focus"</span><span class="j-punc">: [</span></span></div>
-            <div class="code-line"><span class="ln"></span><span class="lc">    <span class="j-val">"DFIR"</span><span class="j-punc">,</span> <span class="j-val">"SOC"</span><span class="j-punc">,</span></span></div>
-            <div class="code-line"><span class="ln"></span><span class="lc">    <span class="j-val">"Penetration Testing"</span><span class="j-punc">,</span></span></div>
-            <div class="code-line"><span class="ln"></span><span class="lc">    <span class="j-val">"Threat Hunting"</span><span class="j-punc">,</span></span></div>
-            <div class="code-line"><span class="ln"></span><span class="lc">    <span class="j-val">"AI Security"</span><span class="j-punc">,</span></span></div>
-            <div class="code-line"><span class="ln"></span><span class="lc">    <span class="j-val">"OT / IoT Security"</span></span></div>
-            <div class="code-line"><span class="ln"></span><span class="lc">  <span class="j-punc">],</span></span></div>
-            <div class="code-line"><span class="ln"></span><span class="lc">  <span class="j-key">"sectors"</span><span class="j-punc">: [</span></span></div>
-            <div class="code-line"><span class="ln"></span><span class="lc">    <span class="j-val">"Government"</span><span class="j-punc">,</span> <span class="j-val">"BFSI"</span><span class="j-punc">,</span> <span class="j-val">"IT &amp; ITES"</span><span class="j-punc">,</span></span></div>
-            <div class="code-line"><span class="ln"></span><span class="lc">    <span class="j-val">"OT / IoT"</span><span class="j-punc">,</span> <span class="j-val">"Critical Infrastructure"</span><span class="j-punc">,</span></span></div>
-            <div class="code-line"><span class="ln"></span><span class="lc">    <span class="j-val">"Energy &amp; Utilities"</span><span class="j-punc">,</span> <span class="j-val">"Healthcare"</span><span class="j-punc">,</span></span></div>
-            <div class="code-line"><span class="ln"></span><span class="lc">    <span class="j-val">"Telecom"</span><span class="j-punc">,</span> <span class="j-val">"Manufacturing"</span><span class="j-punc">,</span> <span class="j-val">"Retail"</span><span class="j-punc">,</span></span></div>
-            <div class="code-line"><span class="ln"></span><span class="lc">    <span class="j-val">"Defense"</span><span class="j-punc">,</span> <span class="j-val">"Education"</span><span class="j-punc">,</span> <span class="j-val">"Insurance"</span><span class="j-punc">,</span></span></div>
-            <div class="code-line"><span class="ln"></span><span class="lc">    <span class="j-val">"Transportation"</span><span class="j-punc">,</span> <span class="j-val">"Oil &amp; Gas / ICS"</span><span class="j-punc">,</span></span></div>
-            <div class="code-line"><span class="ln"></span><span class="lc">    <span class="j-val">"Aerospace"</span><span class="j-punc">,</span> <span class="j-val">"Law Enforcement"</span></span></div>
-            <div class="code-line"><span class="ln"></span><span class="lc">  <span class="j-punc">],</span></span></div>
-            <div class="code-line"><span class="ln"></span><span class="lc">  <span class="j-key">"location"</span><span class="j-punc">:</span> <span class="j-val">"Coimbatore, IN"</span><span class="j-punc">,</span></span></div>
-            <div class="code-line"><span class="ln"></span><span class="lc">  <span class="j-key">"status"</span><span class="j-punc">:</span> <span class="j-green">"THREAT_HUNTING"</span></span></div>
-            <div class="code-line"><span class="ln"></span><span class="lc"><span class="j-punc">}</span></span></div>
-          </div>
-          <div class="code-status">
-            <span class="code-branch"><span class="code-branch-dot"></span>main</span>
-            <span>UTF-8 · LF · JSON</span>
-          </div>
-          </aside>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ LIVE THREAT MAP (threatmap.js, data: assets/data/threatmap.json) ============ -->
-    <section class="section tm-section" id="threat-map">
-      <div class="tm-head reveal">
-        <p class="tm-kicker"><span class="tm-live"></span>live threat intel &middot; last 48 hours</p>
-        <h2 class="tm-title">Global Command-and-Control Activity</h2>
-        <p class="tm-sub">Every pulse is a real C2 server reported to abuse.ch ThreatFox in the last 48 hours, placed at its
-          hosting country and replayed in time order, colour-coded by malware family. The data refreshes every six hours.</p>
-      </div>
-      <div class="tm-grid reveal">
-        <div class="tm-stage" id="tmStage">
-          <canvas id="tmCanvas" role="img" aria-label="World map of command-and-control servers reported in the last 48 hours"></canvas>
-          <div class="tm-hud tm-tl">c2 sightings &middot; threatfox</div>
-          <div class="tm-hud tm-tr" id="tmClock">loading feed</div>
-          <div class="tm-hud tm-br" id="tmUpdated"></div>
-          <p class="tm-offline-msg">Live feed unavailable right now.</p>
-        </div>
-        <aside class="tm-side">
-          <div class="tm-col tm-stats">
-            <div><strong id="tmC2">0</strong><span>C2 servers</span></div>
-            <div><strong id="tmCountries">0</strong><span>countries</span></div>
-            <div><strong id="tmFamilies">0</strong><span>families</span></div>
-          </div>
-          <div class="tm-col">
-            <h3 class="tm-h">Top malware families</h3>
-            <ul class="tm-legend" id="tmLegend"></ul>
-          </div>
-          <div class="tm-col">
-            <h3 class="tm-h">Live feed</h3>
-            <ul class="tm-feed" id="tmFeed"></ul>
-          </div>
+        <aside class="facts">
+          <h3>At a glance</h3>
+          <dl>
+            <div><dt>Role</dt><dd>Senior Associate, Cyber &amp; Digital Risk</dd></div>
+            <div><dt>Company</dt><dd>PwC India</dd></div>
+            <div><dt>Experience</dt><dd>6+ years</dd></div>
+            <div><dt>Focus</dt><dd>DFIR, SOC, Threat Hunting, OT/IoT Security, Penetration Testing, AI Security</dd></div>
+            <div><dt>Sectors</dt><dd>Government, BFSI, Critical Infrastructure, Energy &amp; Utilities, Healthcare, Telecom, Manufacturing, Law Enforcement and more</dd></div>
+            <div><dt>Location</dt><dd>Coimbatore, India</dd></div>
+          </dl>
         </aside>
       </div>
     </section>
 
     <!-- ============ SKILLS ============ -->
     <section class="section" id="skills">
-      <h2 class="section-title reveal"><span class="sec-num">02.</span> ls /arsenal</h2>
+      <div class="section-head"><p class="eyebrow">Expertise</p><h2 class="section-title">Domains, tooling &amp; frameworks</h2></div>
       <div class="skills-grid">
-        <div class="skill-card reveal">
+        <div class="skill-card">
           <div class="skill-head"><span class="skill-icon"><svg aria-hidden="true" class="ico" viewBox="0 0 24 24"><path d="M12 2l8 4v6c0 5.25-3.5 9.4-8 10-4.5-.6-8-4.75-8-10V6z"/></svg></span><h3>Security Domains</h3></div>
           <div class="tags">
             <span>DFIR</span><span>SOC Operations</span><span>Threat Hunting</span><span>OT / IoT Security</span><span>ICS / SCADA</span>
@@ -262,7 +149,7 @@
             <span>Dark Web Forensics</span><span>Purple Teaming</span><span>Data Recovery</span><span>GRC</span><span>Cyber Advisory</span><span>Risk Management</span><span>Security Audit</span><span>Compliance</span>
           </div>
         </div>
-        <div class="skill-card reveal">
+        <div class="skill-card">
           <div class="skill-head"><span class="skill-icon"><svg aria-hidden="true" class="ico" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></span><h3>SIEM &amp; EDR / XDR</h3></div>
           <div class="tags">
             <span>Splunk</span><span>IBM QRadar</span><span>MS Sentinel</span><span>ELK Stack</span><span>Wazuh</span>
@@ -271,7 +158,7 @@
             <span>Trend Micro Vision One</span><span>Heimdal</span><span>Velociraptor</span><span>Sysmon</span><span>Cortex XSOAR</span>
           </div>
         </div>
-        <div class="skill-card reveal">
+        <div class="skill-card">
           <div class="skill-head"><span class="skill-icon"><svg aria-hidden="true" class="ico" viewBox="0 0 24 24"><line x1="22" y1="12" x2="2" y2="12"/><path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/><line x1="6" y1="16" x2="6.01" y2="16"/><line x1="10" y1="16" x2="10.01" y2="16"/></svg></span><h3>DFIR Toolkit</h3></div>
           <div class="tags">
             <span>Cellebrite</span><span>Magnet Axiom</span><span>FTK Imager</span><span>Volatility 3</span><span>Redline</span>
@@ -280,14 +167,14 @@
             <span>Timesketch</span><span>CyberChef</span><span>R-Studio</span><span>PC-3000</span>
           </div>
         </div>
-        <div class="skill-card reveal">
+        <div class="skill-card">
           <div class="skill-head"><span class="skill-icon"><svg aria-hidden="true" class="ico" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span><h3>Malware Analysis &amp; RE</h3></div>
           <div class="tags">
             <span>Ghidra</span><span>IDA Pro</span><span>x64dbg</span><span>PEBear</span><span>REMnux</span><span>FLARE VM</span>
             <span>Any.run</span><span>Joe Sandbox</span><span>VirusTotal</span><span>YARA / Sigma</span><span>capa</span><span>Detect-It-Easy</span><span>oletools</span>
           </div>
         </div>
-        <div class="skill-card reveal">
+        <div class="skill-card">
           <div class="skill-head"><span class="skill-icon"><svg aria-hidden="true" class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span><h3>Network &amp; Threat Intel</h3></div>
           <div class="tags">
             <span>Wireshark</span><span>Zeek</span><span>Suricata</span><span>NetworkMiner</span><span>tcpdump</span><span>Security Onion</span><span>Arkime</span>
@@ -295,7 +182,7 @@
             <span>MITRE ATT&amp;CK</span><span>OSINT Framework</span>
           </div>
         </div>
-        <div class="skill-card reveal">
+        <div class="skill-card">
           <div class="skill-head"><span class="skill-icon"><svg aria-hidden="true" class="ico" viewBox="0 0 24 24"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg></span><h3>VAPT, Cloud &amp; AI</h3></div>
           <div class="tags">
             <span>Nessus</span><span>Rapid7 InsightVM</span><span>Burp Suite</span><span>OWASP ZAP</span><span>Qualys</span><span>Acunetix</span>
@@ -307,7 +194,7 @@
         </div>
       </div>
 
-      <div class="frameworks reveal">
+      <div class="frameworks">
         <h3 class="fw-title">Frameworks, Standards &amp; Policies</h3>
         <div class="fw-groups">
           <div class="fw-group">
@@ -348,42 +235,41 @@
 
     <!-- ============ PROJECTS ============ -->
     <section class="section" id="projects">
-      <h2 class="section-title reveal"><span class="sec-num">03.</span> ls ~/open-source</h2>
-      <p class="section-intro reveal">Tools I build and maintain for the DFIR community, used in real enterprise incident response.</p>
+      <div class="section-head"><p class="eyebrow">Open source</p><h2 class="section-title">Tools I build and maintain</h2><p class="section-intro">Used by the DFIR community in real enterprise incident response.</p></div>
       <div class="proj-grid">
-        <a class="proj-card reveal" href="https://github.com/subashjaganathan/hawkscan" target="_blank" rel="noopener">
+        <a class="proj-card" href="https://github.com/subashjaganathan/hawkscan" target="_blank" rel="noopener">
           <div class="proj-top"><span class="proj-icon"><svg aria-hidden="true" class="ico" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span><span class="proj-stars">malware scanner</span></div>
           <h3>hawkscan</h3>
           <p>Offline, explainable malware scanner for any file on any OS. Combines static analysis, heuristics and YARA rules to flag malicious files with clear, human-readable reasoning for every verdict.</p>
           <div class="proj-meta"><span class="lang-dot py"></span>Python<span class="proj-license">MIT</span></div>
         </a>
-        <a class="proj-card reveal" href="https://github.com/subashjaganathan/windows-dfir-toolkit" target="_blank" rel="noopener">
+        <a class="proj-card" href="https://github.com/subashjaganathan/windows-dfir-toolkit" target="_blank" rel="noopener">
           <div class="proj-top"><span class="proj-icon"><svg aria-hidden="true" class="ico" viewBox="0 0 24 24"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg></span><span class="proj-stars"><svg aria-hidden="true" class="star-ico" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>4+</span></div>
           <h3>windows-dfir-toolkit</h3>
           <p>Professional Windows IR evidence collection toolkit: automated triage acquisition of volatile data, event logs, registry hives and forensic artifacts for enterprise incident response.</p>
           <div class="proj-meta"><span class="lang-dot ps"></span>PowerShell<span class="proj-license">MIT</span></div>
         </a>
-        <a class="proj-card reveal" href="https://github.com/subashjaganathan/Linux-DFIR-Toolkit" target="_blank" rel="noopener">
+        <a class="proj-card" href="https://github.com/subashjaganathan/Linux-DFIR-Toolkit" target="_blank" rel="noopener">
           <div class="proj-top"><span class="proj-icon"><svg aria-hidden="true" class="ico" viewBox="0 0 24 24"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg></span><span class="proj-stars"><svg aria-hidden="true" class="star-ico" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>5+</span></div>
           <h3>Linux-DFIR-Toolkit</h3>
           <p>Enterprise-grade Linux DFIR &amp; incident response toolkit for rapid artifact collection, live response and triage across production server fleets.</p>
           <div class="proj-meta"><span class="lang-dot sh"></span>Shell<span class="proj-license">MIT</span></div>
         </a>
-        <a class="proj-card reveal" href="https://subashjaganathan.github.io/zero-to-secure/" target="_blank" rel="noopener">
+        <a class="proj-card" href="https://subashjaganathan.github.io/zero-to-secure/" target="_blank" rel="noopener">
           <div class="proj-top"><span class="proj-icon"><svg aria-hidden="true" class="ico" viewBox="0 0 24 24"><path d="M12 2 4 5.5v6c0 4.6 3.4 8.5 8 9.5 4.6-1 8-4.9 8-9.5v-6z"/><polyline points="9 12 11 14 15.5 9.5"/></svg></span><span class="proj-stars">web app</span></div>
           <h3>zero-to-secure</h3>
           <p>Zero to Secure: 278 plain-English security and privacy checks across 15 areas, each rated Essential, Optional or Advanced. Progress is stored locally in the browser, with no account, no backend and no tracking.</p>
           <div class="proj-meta"><span class="lang-dot ts"></span>TypeScript<span class="proj-license">MIT</span></div>
         </a>
       </div>
-      <p class="proj-more reveal">More on <a href="https://github.com/subashjaganathan" target="_blank" rel="noopener">github.com/subashjaganathan ↗</a></p>
+      <p class="proj-more">More on <a href="https://github.com/subashjaganathan" target="_blank" rel="noopener">github.com/subashjaganathan ↗</a></p>
     </section>
 
     <!-- ============ FREE RESOURCES: SECURITY CHECKLIST + PRIVACY ALTERNATIVES ============ -->
     <section class="section spotlight-section" id="resources">
-      <div class="spotlight reveal" id="checklist">
+      <div class="spotlight" id="checklist">
         <div class="spot-copy">
-          <p class="spot-kicker">// free resource &middot; security</p>
+          <p class="spot-kicker">Free resource &middot; Security</p>
           <h2 class="spot-title">Zero to Secure</h2>
           <p class="spot-desc">Plain-English security and privacy checks for everyday life, from passwords and devices to backups,
             finances and AI chatbots. Each check is rated Essential, Optional or Advanced, and your progress is saved only in
@@ -399,7 +285,7 @@
           </div>
         </div>
         <div class="spot-panel" aria-hidden="true">
-          <div class="spot-panel-head"><span>checklist.yml</span><span>progress: local</span></div>
+          <div class="spot-panel-head"><span>Checklist preview</span><span>Saved in your browser</span></div>
           <ul class="spot-list">
             <li class="done">Use a Strong Password<span class="spot-area">Auth</span></li>
             <li class="done">Don't Reuse Passwords<span class="spot-area">Auth</span></li>
@@ -412,9 +298,9 @@
         </div>
       </div>
 
-      <div class="spotlight spotlight-alt reveal" id="privacy">
+      <div class="spotlight spotlight-alt" id="privacy">
         <div class="spot-copy">
-          <p class="spot-kicker">// free resource &middot; privacy</p>
+          <p class="spot-kicker">Free resource &middot; Privacy</p>
           <h2 class="spot-title">Privacy Alternatives</h2>
           <p class="spot-desc">A searchable directory of privacy-respecting tools, organised by the mainstream product each one
             replaces: look up what you already use and see what to switch to. Filter by open source, independent audit or
@@ -430,7 +316,7 @@
           </div>
         </div>
         <div class="spot-panel" aria-hidden="true">
-          <div class="spot-panel-head"><span>swap-outs</span><span>no tracking</span></div>
+          <div class="spot-panel-head"><span>Popular swaps</span><span>No tracking</span></div>
           <ul class="swap-list">
             <li><span class="swap-old">LastPass</span><svg class="swap-arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></svg><span class="swap-new">Bitwarden</span><span class="spot-area">Passwords</span></li>
             <li><span class="swap-old">Gmail</span><svg class="swap-arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></svg><span class="swap-new">ProtonMail</span><span class="spot-area">Email</span></li>
@@ -445,10 +331,10 @@
 
     <!-- ============ EXPERIENCE ============ -->
     <section class="section" id="experience">
-      <h2 class="section-title reveal"><span class="sec-num">04.</span> git log --career</h2>
+      <div class="section-head"><p class="eyebrow">Experience</p><h2 class="section-title">Career history</h2></div>
       <div class="timeline">
 
-        <article class="tl-item reveal">
+        <article class="tl-item">
           <div class="tl-marker current"></div>
           <div class="tl-card">
             <div class="tl-head">
@@ -471,7 +357,7 @@
           </div>
         </article>
 
-        <article class="tl-item reveal">
+        <article class="tl-item">
           <div class="tl-marker"></div>
           <div class="tl-card">
             <div class="tl-head">
@@ -493,7 +379,7 @@
           </div>
         </article>
 
-        <article class="tl-item reveal">
+        <article class="tl-item">
           <div class="tl-marker"></div>
           <div class="tl-card">
             <div class="tl-head">
@@ -513,7 +399,7 @@
           </div>
         </article>
 
-        <article class="tl-item reveal">
+        <article class="tl-item">
           <div class="tl-marker"></div>
           <div class="tl-card">
             <div class="tl-head">
@@ -532,7 +418,7 @@
           </div>
         </article>
 
-        <article class="tl-item reveal">
+        <article class="tl-item">
           <div class="tl-marker"></div>
           <div class="tl-card">
             <div class="tl-head">
@@ -550,7 +436,7 @@
           </div>
         </article>
 
-        <article class="tl-item reveal">
+        <article class="tl-item">
           <div class="tl-marker"></div>
           <div class="tl-card">
             <div class="tl-head">
@@ -571,45 +457,45 @@
 
     <!-- ============ IMPACT ============ -->
     <section class="section" id="impact">
-      <h2 class="section-title reveal"><span class="sec-num">05.</span> grep -r "impact"</h2>
+      <div class="section-head"><p class="eyebrow">Impact</p><h2 class="section-title">Results that matter</h2></div>
       <div class="stats-grid">
-        <div class="stat reveal"><span class="stat-num" data-count="6">0</span><span class="stat-plus">+</span><p>Years in the Trenches</p></div>
-        <div class="stat reveal"><span class="stat-num" data-count="20">0</span><span class="stat-plus">+</span><p>Organizations Recovered from Breaches</p></div>
-        <div class="stat reveal"><span class="stat-num" data-count="3000">0</span><span class="stat-plus">+</span><p>Servers Assessed &amp; Secured</p></div>
-        <div class="stat reveal"><span class="stat-num" data-count="150">0</span><span class="stat-plus">+</span><p>Web &amp; Mobile Apps Tested</p></div>
-        <div class="stat reveal"><span class="stat-num" data-count="200">0</span><span class="stat-plus">+</span><p>Fraud Cases Dismantled</p></div>
-        <div class="stat reveal"><span class="stat-num" data-count="1000">0</span><span class="stat-plus">+</span><p>Morphed Images Taken Down</p></div>
-        <div class="stat reveal"><span class="stat-num" data-count="50000">0</span><span class="stat-plus">+</span><p>Professionals &amp; Police Officers Trained</p></div>
-        <div class="stat reveal"><span class="stat-num" data-count="14">0</span><span class="stat-plus">+</span><p>Industry Certifications</p></div>
+        <div class="stat"><span class="stat-num" data-count="6">0</span><span class="stat-plus">+</span><p>Years of Experience</p></div>
+        <div class="stat"><span class="stat-num" data-count="20">0</span><span class="stat-plus">+</span><p>Organizations Recovered from Breaches</p></div>
+        <div class="stat"><span class="stat-num" data-count="3000">0</span><span class="stat-plus">+</span><p>Servers Assessed &amp; Secured</p></div>
+        <div class="stat"><span class="stat-num" data-count="150">0</span><span class="stat-plus">+</span><p>Web &amp; Mobile Apps Tested</p></div>
+        <div class="stat"><span class="stat-num" data-count="200">0</span><span class="stat-plus">+</span><p>Fraud Cases Dismantled</p></div>
+        <div class="stat"><span class="stat-num" data-count="1000">0</span><span class="stat-plus">+</span><p>Morphed Images Taken Down</p></div>
+        <div class="stat"><span class="stat-num" data-count="50000">0</span><span class="stat-plus">+</span><p>Professionals &amp; Police Officers Trained</p></div>
+        <div class="stat"><span class="stat-num" data-count="14">0</span><span class="stat-plus">+</span><p>Industry Certifications</p></div>
       </div>
 
       <div class="impact-cards">
-        <div class="impact-card reveal">
+        <div class="impact-card">
           <span class="ic-icon"><svg aria-hidden="true" class="ico" viewBox="0 0 24 24"><path d="M12 2l8 4v6c0 5.25-3.5 9.4-8 10-4.5-.6-8-4.75-8-10V6z"/><polyline points="9 12 11 14 15 10"/></svg></span>
           <h3>Government &amp; Law Enforcement Ally</h3>
           <p>Extending dedicated support to the <strong>Tamil Nadu Police, Special Branch CBCID and the Ministry of Home Affairs</strong> as a volunteer Cyber Forensic Expert, supporting takedown operations against online scammer networks and assisting agencies with threat actor tracking, account seizure and attacker attribution through OSINT, dark web intelligence and digital forensics.</p>
         </div>
-        <div class="impact-card reveal">
+        <div class="impact-card">
           <span class="ic-icon"><svg aria-hidden="true" class="ico" viewBox="0 0 24 24"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></span>
           <h3>Educator at National Scale</h3>
           <p>Trained <strong>50,000+ cybersecurity professionals and police officers</strong> through hands-on workshops, DFIR bootcamps and capability-building programs, raising investigation readiness across law enforcement and enterprise security teams.</p>
         </div>
-        <div class="impact-card reveal">
+        <div class="impact-card">
           <span class="ic-icon"><svg aria-hidden="true" class="ico" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span>
           <h3>Confidential Case Work</h3>
           <p>Investigated and resolved numerous <strong>cybercrime cases for individuals and government agencies</strong>, spanning financial fraud, account compromise, harassment and data theft. Case specifics remain protected under confidentiality and non-disclosure obligations.</p>
         </div>
-        <div class="impact-card reveal">
+        <div class="impact-card">
           <span class="ic-icon"><svg aria-hidden="true" class="ico" viewBox="0 0 24 24"><path d="M12 2l8 4v6c0 5.25-3.5 9.4-8 10-4.5-.6-8-4.75-8-10V6z"/><polyline points="9 12 11 14 15 10"/></svg></span>
           <h3>20+ Organizations Recovered via IR &amp; Forensics</h3>
           <p>Led end-to-end <strong>incident response and digital forensic investigations for 20+ organizations</strong> across banking, financial services, government and enterprise sectors, covering ransomware recovery, APT containment, insider threat investigations and data breach response. Restored business continuity, preserved chain-of-custody evidence and delivered post-incident reports to C-suite and legal teams. Engagements protected under NDA.</p>
         </div>
-        <div class="impact-card reveal">
+        <div class="impact-card">
           <span class="ic-icon"><svg aria-hidden="true" class="ico" viewBox="0 0 24 24"><path d="M12 2l8 4v6c0 5.25-3.5 9.4-8 10-4.5-.6-8-4.75-8-10V6z"/></svg></span>
           <h3>Victim Protection at Scale</h3>
           <p>Helped identify and remove <strong>1,000+ digitally manipulated images</strong> used in cybercrime, and dismantled <strong>200+ fraudulent loan app cases</strong>, recovering evidence and preventing further financial harm.</p>
         </div>
-        <div class="impact-card reveal">
+        <div class="impact-card">
           <span class="ic-icon"><svg aria-hidden="true" class="ico" viewBox="0 0 24 24"><line x1="6" y1="3" x2="6" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg></span>
           <h3>Open-Source DFIR Builder</h3>
           <p>Author of the <strong>Windows IR Evidence Collection Toolkit</strong> and <strong>Linux DFIR Toolkit</strong> on GitHub, actively used by the security community for enterprise incident response. <a href="https://github.com/subashjaganathan" target="_blank" rel="noopener">github.com/subashjaganathan &#8599;</a></p>
@@ -619,31 +505,30 @@
 
     <!-- ============ SPEAKING & COMMUNITY ============ -->
     <section class="section" id="community">
-      <h2 class="section-title reveal"><span class="sec-num">06.</span> tail -f community.log</h2>
-      <p class="section-intro reveal">Beyond client engagements, I contribute to the wider security community as a speaker, educator and curriculum advisor.</p>
+      <div class="section-head"><p class="eyebrow">Community</p><h2 class="section-title">Speaking &amp; community</h2><p class="section-intro">Beyond client engagements, I contribute to the wider security community as a speaker, educator and curriculum advisor.</p></div>
       <div class="impact-cards">
-        <div class="impact-card reveal">
+        <div class="impact-card">
           <span class="ic-icon"><svg aria-hidden="true" class="ico" viewBox="0 0 24 24"><path d="M3 11l18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></span>
           <h3>Conference Speaker</h3>
           <p>Speaker at security conferences and blue-team forums, sharing <strong>real-world Digital Forensics &amp; Incident Response</strong> experience: triage, evidence preservation, timeline reconstruction and coordinating response under pressure.</p>
         </div>
-        <div class="impact-card reveal">
+        <div class="impact-card">
           <span class="ic-icon"><svg aria-hidden="true" class="ico" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span>
           <h3>Curriculum Advisor</h3>
           <p>Invited as an <strong>industry expert</strong> to academic boards and curriculum committees, helping align cybersecurity programs with the evolving threat landscape and industry expectations.</p>
         </div>
-        <div class="impact-card reveal">
+        <div class="impact-card">
           <span class="ic-icon"><svg aria-hidden="true" class="ico" viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></span>
           <h3>Academic Collaboration</h3>
           <p>Engaged with universities as an <strong>external examiner and evaluator</strong>, reviewing final-year cybersecurity and engineering projects and mentoring the next generation of security practitioners.</p>
         </div>
-        <div class="impact-card reveal">
+        <div class="impact-card">
           <span class="ic-icon"><svg aria-hidden="true" class="ico" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span>
           <h3>Knowledge Sharing</h3>
           <p>Author of free, in-depth security resources spanning <strong>threat hunting, detection engineering and DFIR</strong>, mapping adversary techniques to practical detection queries. Active writer and contributor on emerging AI-security threats.</p>
         </div>
       </div>
-      <div class="community-cta reveal">
+      <div class="community-cta">
         <a href="volunteering.html" class="btn btn-primary">View Volunteering &amp; Community Record &#8594;</a>
         <p class="community-cta-note">10 volunteer roles - MHA &amp; Govt. of Tamil Nadu, OWASP, DEF CON, Cloud Security Alliance and more.</p>
       </div>
@@ -651,9 +536,9 @@
 
     <!-- ============ CERTIFICATIONS ============ -->
     <section class="section" id="certs">
-      <h2 class="section-title reveal"><span class="sec-num">07.</span> ./verify --credentials</h2>
+      <div class="section-head"><p class="eyebrow">Credentials</p><h2 class="section-title">Certifications &amp; education</h2></div>
       <div class="certs-grid">
-        <div class="cert-group reveal">
+        <div class="cert-group">
           <h3><svg aria-hidden="true" class="ico cert-ico" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>Forensics &amp; IR</h3>
           <ul>
             <li><strong>CHFI</strong> - Computer Hacking Forensic Investigator <span>EC-Council</span></li>
@@ -662,14 +547,14 @@
             <li><strong>Windows Forensics</strong> <span>Belkasoft</span></li>
           </ul>
         </div>
-        <div class="cert-group reveal">
+        <div class="cert-group">
           <h3><svg aria-hidden="true" class="ico cert-ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="9"/><line x1="12" y1="1" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="1" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="23" y2="12"/></svg>Offensive Security</h3>
           <ul>
             <li><strong>CEH</strong> - Certified Ethical Hacker <span>EC-Council</span></li>
             <li><strong>CNSS</strong> - Certified Network Security Specialist <span>ICSI</span></li>
           </ul>
         </div>
-        <div class="cert-group reveal">
+        <div class="cert-group">
           <h3><svg aria-hidden="true" class="ico cert-ico" viewBox="0 0 24 24"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>Cloud &amp; Network</h3>
           <ul>
             <li><strong>AZ-500</strong> - Azure Security Engineer Associate <span>Microsoft</span></li>
@@ -677,7 +562,7 @@
             <li><strong>NSE 1 &amp; NSE 2</strong> - Network Security Expert <span>Fortinet</span></li>
           </ul>
         </div>
-        <div class="cert-group reveal">
+        <div class="cert-group">
           <h3><svg aria-hidden="true" class="ico cert-ico" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>AI Security</h3>
           <ul>
             <li><strong>Certified LLM Security Professional</strong> <span>Red Team Leaders</span></li>
@@ -690,7 +575,7 @@
       </div>
 
       <div class="edu-row">
-        <div class="edu-card reveal">
+        <div class="edu-card">
           <span class="edu-icon"><svg aria-hidden="true" class="ico" viewBox="0 0 24 24"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></span>
           <div>
             <h3>Master of Computer Applications - Cyber Security</h3>
@@ -698,7 +583,7 @@
           </div>
           <span class="edu-gpa">9.3<small>/10</small></span>
         </div>
-        <div class="edu-card reveal">
+        <div class="edu-card">
           <span class="edu-icon"><svg aria-hidden="true" class="ico" viewBox="0 0 24 24"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></span>
           <div>
             <h3>B.Sc - Software Systems</h3>
@@ -711,10 +596,9 @@
 
     <!-- ============ CONTACT ============ -->
     <section class="section contact" id="contact">
-      <h2 class="section-title reveal"><span class="sec-num">08.</span> ssh subash@contact</h2>
-      <div class="contact-box reveal">
-        <p class="contact-lead">Always up for a good security conversation - <span class="accent">DFIR</span> war-stories, a threat hunt,
-          <span class="accent">SOC &amp; OT/IoT defense</span>, speaking, mentoring or collaboration. If it's about defending or investigating, let's talk.</p>
+      <div class="section-head"><p class="eyebrow">Contact</p><h2 class="section-title">Get in touch</h2></div>
+      <div class="contact-box">
+        <p class="contact-lead">Open to conversations about incident response, threat hunting, SOC and OT/IoT security, as well as speaking, mentoring and collaboration.</p>
         <div class="contact-links">
           <a href="#contact" class="contact-link js-email"><span class="cl-icon"><svg aria-hidden="true" class="ico" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 6L2 7"/></svg></span><span><small>Email</small><span class="email-text">Subashsj1908 [at] gmail [dot] com</span></span></a>
           <noscript><span class="contact-noscript">Email: Subashsj1908 [at] gmail [dot] com</span></noscript>
@@ -726,17 +610,20 @@
           <a href="https://www.instagram.com/subash_0fficial/" target="_blank" rel="noopener" class="contact-link"><span class="cl-icon"><svg aria-hidden="true" class="ico" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></span><span><small>Instagram</small>@subash_0fficial</span></a>
           <a href="https://linktr.ee/subashjaganathan" target="_blank" rel="noopener" class="contact-link"><span class="cl-icon"><svg aria-hidden="true" class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span><span><small>Linktree</small>linktr.ee/subashjaganathan</span></a>
         </div>
-        <p class="contact-loc"><svg aria-hidden="true" class="ico" viewBox="0 0 24 24" style="display:inline-block;vertical-align:-3px"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Coimbatore, Tamil Nadu, India</p>
+        <p class="contact-loc"><svg aria-hidden="true" class="ico" viewBox="0 0 24 24" style="display:inline-block;vertical-align:-4px;width:16px;height:16px"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Coimbatore, Tamil Nadu, India</p>
       </div>
     </section>
   </main>
 
+
+
   <footer class="footer">
-    <p><span class="t-green">$</span> echo "Designed &amp; built by Subash Jaganathan | © <span id="year"></span>"</p>
-    <p class="footer-sub">No threats were left unhunted in the making of this site.</p>
+    <div class="footer-inner">
+      <p>&copy; <span id="year"></span> Subash Jaganathan &middot; Coimbatore, India</p>
+      <p><a href="https://www.linkedin.com/in/subash-j/" target="_blank" rel="noopener">LinkedIn</a> &middot; <a href="https://github.com/subashjaganathan" target="_blank" rel="noopener">GitHub</a></p>
+    </div>
   </footer>
 
-  <script src="script.js?v=5"></script>
-  <script type="module" src="cinema.js?v=7"></script>
+  <script src="script.js?v=6"></script>
 </body>
 </html>
