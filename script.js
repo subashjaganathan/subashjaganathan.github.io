@@ -138,14 +138,13 @@
     if (loading) return;
     loading = true;
     var s = document.createElement("script");
-    s.src = "egg.js?v=2";
+    s.src = "egg.js?v=3";
     s.onload = function () { loading = false; if (window.SJEgg) window.SJEgg.open(); };
     s.onerror = function () { loading = false; };
     document.body.appendChild(s);
   }
 
-  var trigger = document.getElementById("eggTrigger");
-  if (trigger) trigger.addEventListener("click", openEgg);
+  document.querySelectorAll("[data-egg]").forEach(function (el) { el.addEventListener("click", openEgg); });
 
   var mark = document.querySelector(".nav-mark");
   var clicks = [];

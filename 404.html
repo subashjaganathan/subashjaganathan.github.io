@@ -5,16 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Page not found | Subash Jaganathan</title>
   <meta name="robots" content="noindex" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'unsafe-inline'; font-src 'self'; base-uri 'none'; form-action 'none'" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
   <link href="/assets/fonts/fonts.css" rel="stylesheet" />
-  <script>
-    // The checklist moved from /personal-cyber-hygiene-checklist/ to /zero-to-secure/; keep old deep links working.
-    (function () {
-      var old = "/personal-cyber-hygiene-checklist/";
-      if (location.pathname.indexOf(old) === 0) {
-        location.replace("/zero-to-secure/" + location.pathname.slice(old.length) + location.search + location.hash);
-      }
-    })();
-  </script>
+  <script src="/404.js"></script>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {

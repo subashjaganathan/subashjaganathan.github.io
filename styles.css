@@ -542,3 +542,44 @@ html.egg-open { overflow: hidden; }
 .egg-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 @media (max-width: 420px) { .egg-panel { padding: 18px; } .egg-steps span { font-size: 0; gap: 0; justify-content: center; } .egg-key { height: 40px; } }
 @media (prefers-reduced-motion: reduce) { .egg-flip, .egg-pop, .egg-enter, .egg-result { animation: none; } }
+
+/* ---------------- Emphasis: medium weight in running text, not heavy bold ---------------- */
+.hero-sub strong, .about-text strong, .about-highlight strong, .tl-card li strong, .impact-card p strong,
+.vol-card p strong, .section-intro strong, .contact-lead strong, .spot-desc strong {
+  font-weight: 500; color: var(--ink);
+}
+
+.loc-ico { display: inline-block; vertical-align: -3px; width: 16px; height: 16px; }
+
+/* ---------------- Evidence Locker section ---------------- */
+.locker-card {
+  display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 48px; align-items: center;
+  padding: 40px; border: 1px solid var(--border); border-radius: 16px;
+  background: linear-gradient(135deg, #f7f9ff 0%, #ffffff 60%);
+}
+.locker-card .hero-actions { margin-top: 24px; }
+.locker-note { margin-top: 14px; font-size: 13px; color: var(--text-dim); }
+kbd {
+  font-family: ui-monospace, "SFMono-Regular", Consolas, monospace; font-size: 12px; padding: 1px 6px;
+  border: 1px solid var(--border-strong); border-bottom-width: 2px; border-radius: 5px; background: #fff; color: var(--ink);
+}
+.locker-levels { list-style: none; display: grid; gap: 10px; }
+.locker-levels li {
+  display: flex; align-items: center; gap: 14px; padding: 14px 16px; border-radius: 12px;
+  background: #fff; border: 1px solid var(--border); box-shadow: var(--shadow);
+}
+.locker-levels b {
+  display: grid; place-items: center; flex: none; width: 32px; height: 32px; border-radius: 8px;
+  background: var(--accent-soft); color: var(--accent); font-size: 14px;
+}
+.locker-levels li:nth-child(2) b { background: #fcf4d6; color: #684e00; }
+.locker-levels li:nth-child(3) b { background: #fff1f1; color: #a2191f; }
+.locker-levels span { font-size: 13px; color: var(--text-dim); line-height: 1.45; }
+.locker-levels strong { display: block; font-size: 15px; color: var(--ink); font-weight: 600; }
+@media (max-width: 900px) { .locker-card { grid-template-columns: 1fr; gap: 28px; padding: 28px 20px; } }
+
+/* flip stagger for a submitted guess (child 1 is the row number) */
+.egg-flip:nth-child(3) { animation-delay: 80ms; }
+.egg-flip:nth-child(4) { animation-delay: 160ms; }
+.egg-flip:nth-child(5) { animation-delay: 240ms; }
+.egg-flip:nth-child(6) { animation-delay: 320ms; }

@@ -285,7 +285,7 @@
       var last = animateLast && ri === state.rows.length - 1;
       var tiles = r.guess.split("").map(function (c, i) {
         var cls = lv.positional ? " egg-" + r.marks[i] : "";
-        return '<span class="egg-tile' + cls + (last ? " egg-flip" : "") + '" style="animation-delay:' + (i * 80) + 'ms">' + esc(c) + "</span>";
+        return '<span class="egg-tile' + cls + (last ? " egg-flip" : "") + '">' + esc(c) + "</span>";
       }).join("");
       var fb = lv.positional ? "" :
         '<span class="egg-pegs' + (last ? " egg-pop" : "") + '" aria-label="' + r.counts.hits + " right place, " + r.counts.near + ' misplaced">' +
